@@ -1,2 +1,6 @@
 <h1>oiiiiiiiiiiiiiiiiii</h1>
 <%= link_to 'Edit profile', edit_user_path(current_user) %>
+
+<% @orders.each do |order| %>
+<%= order.quantity %> <%= order.stock %>
+<% end %>

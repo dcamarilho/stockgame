@@ -4,21 +4,27 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.new
+    @order = Order.new(order_params)
     @stock = Stock.find(params[:stock_id])
     @order.user = current_user
     @order.stock = @stock
+    @order.price = @stock.price
 
     if @order.save
-      # @flat.availability = false
-      # @flat.save
-      # redirect_to @order, notice: 'Flat was successfully updated.'
+      redirect_to dashboard_path, notice: 'Order was successfully created.'
     else
-      redirect_to @stock, alert: 'Error creating order'
+      render 'stocks/show'
     end
+
   end
 
   def show
     @order = Order.find(params[:id])
+  end
+
+  private
+
+  def order_params
+    params.require(:order).permit(:quantity)
   end
 end
