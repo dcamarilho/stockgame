@@ -7,4 +7,5 @@ class User < ApplicationRecord
 
   validates :username, presence: true, uniqueness: true
 
+  mount_uploader :photo, PhotoUploader
 end
