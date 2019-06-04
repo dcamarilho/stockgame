@@ -18,7 +18,11 @@
           <%= link_to "Messages", "#", class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% if current_user.photo.file.nil? %>
+            <%= image_tag 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png', class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" } %>
+          <% else %>
+            <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
             <%= link_to "Settings", edit_user_registration_path, class: "dropdown-item" %>

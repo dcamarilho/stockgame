@@ -1,2 +1,13 @@
 <h1>Users#edit</h1>
 <p>Find me in app/views/users/edit.html.erb</p>
+
+<% if current_user == @user %>
+  <h1 style="text-align: center;">Edit profile</h1>
+
+  <%= render 'form', user: current_user %>
+  <br>
+<% else %>
+  <h3>Sorry <%= current_user.firstname %>, you can't edit other user's profile.</h3>
+<% end %>
+  <br>
+<%= link_to 'Back', dashboard_path, class: 'btn btn-primary' %>
