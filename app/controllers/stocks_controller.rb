@@ -6,7 +6,6 @@ class StocksController < ApplicationController
   end
 
   def show
-    @stocks = Stock.all
   end
 
   def create
@@ -32,6 +31,6 @@ class StocksController < ApplicationController
   end
 
   def set_stock
-    @stock = stock.find(params[:id])
+    @stock = Stock.find(params[:id])
   end
 end

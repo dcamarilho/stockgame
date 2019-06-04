@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:edit, :update, :destroy, :show]
 
-  get 'dashboard', to: 'user#dashboard'
+  get 'dashboard', to: 'users#dashboard'
 
 
 end
