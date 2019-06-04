@@ -1,0 +1,9 @@
+<h1>Welcome to stocks index</h1>
+<br>
+<div class="container">
+<% @stocks.each do |stock| %>
+<h2>Name: <%= stock.name %></h2>
+<h2>Price: <%= stock.price %></h2>
+<br>
+<% end %>
+</div>
