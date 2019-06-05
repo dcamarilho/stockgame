@@ -12,5 +12,7 @@ Rails.application.routes.draw do
 
   get 'dashboard', to: 'users#dashboard'
 
+  get 'dashboard/wallet', to: 'users#user_wallet'
+
 
 end

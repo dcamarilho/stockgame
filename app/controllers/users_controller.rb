@@ -24,6 +24,9 @@ class UsersController < ApplicationController
     end
   end
 
+  def user_wallet
+  end
+
   private
 
   def user_params
@@ -33,4 +36,5 @@ class UsersController < ApplicationController
   def set_user
     @user = User.find(params[:id])
   end
+
 end

@@ -1,9 +1,29 @@
 <h1>Stocks#show</h1>
-<p>Find me in app/views/stocks/show.html.erb</p>
-<p>Name: <%= @stock.name %></p>
-<p>R$: <%= @stock.price %></p>
 
-<%= simple_form_for [@stock, @order] do |f| %>
+<p>Name: <%= @stock.name %></p>
+
+<p>R$: <%= @stock.price %></p>
+<p> Variation: <%= @stock.variation %></p>
+<p> Quantity: <%= current_user.wallet[@stock.id.to_s] %></p>
+<p> Invested credits: <%= @stock.price * current_user.wallet[@stock.id.to_s]  %></p>
+<div class= "btn btn-success">
+  <%= @stock.price %>
+</div>
+<div class= "btn btn-danger">
+  <%= @stock.price %>
+</div>
+<br>
+<div class="btn btn-warning mt-3">
+  <%= current_user.credits %>
+</div>
+<br>
+<div class="btn btn-info mt-3">
+  <%= link_to 'Back', :back %>
+</div>
+<div class="btn btn-warning mt-3">
+
+</div>
+ <%= simple_form_for [@stock, @order] do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   <%= f.error :user_insuficient_credit %>
@@ -15,7 +35,7 @@
   <div class="form-actions">
     <%= f.button :submit, class: 'btn btn-outline-primary'%>
   </div>
-<% end %>
+<% end %> -->
 
 <!-- card da acao igual do figma. (nome, price, variacao do dia, quantidade que o user tem da acao, numero de credits invested na acao, botoes de compra e venda (javascript) e ajax pra atualizar preco da acao. total de credits do usuario liquido.)
 

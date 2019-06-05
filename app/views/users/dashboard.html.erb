@@ -2,21 +2,31 @@
 <%= link_to 'Edit profile', edit_user_path(current_user) %>
 
 
+<!-- username -->
+<p><%= current_user.username %></p>
+<!-- credits -->
+<% credits = current_user.credits %>
+<p><%= credits %></p>
+<!-- invested credits -->
+<% invested_credits = 0 %>
+<% current_user.wallet.each do |key, value| %>
+<% invested_credits += value * Stock.find(key.to_i).price %>
+<% end %>
+<p><%= invested_credits %></p>
+  <!-- total credits -->
+<p><%= invested_credits + credits %></p>
 
-<!-- card 1: username
-  credits atuais
-  credits invested
-  total credits
- -->
 
 <!-- card 2: conquistas
 infos, quanto ja investiu
 etc -->
 
 <!-- se wallet vazio link to stocks market (index de acoes) -->
+<%= link_to 'Wallet', dashboard_wallet_path %>
 <!-- cards com link pra wallet (index onde todas acoes pertencem ao current_user) -->
 
 <!-- link pro market -->
+<%= link_to 'Market', stocks_path %>
 
 <div class="card-info">
   <div>
