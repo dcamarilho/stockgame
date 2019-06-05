@@ -8,11 +8,8 @@
 <% credits = current_user.credits %>
 <p><%= credits %></p>
 <!-- invested credits -->
-<% invested_credits = 0 %>
-<% current_user.wallet.each do |key, value| %>
-<% invested_credits += value * Stock.find(key.to_i).price %>
-<% end %>
-<p><%= invested_credits %></p>
+
+<p><%= invested_credits = current_user.invested_credits %></p>
   <!-- total credits -->
 <p><%= invested_credits + credits %></p>
 
