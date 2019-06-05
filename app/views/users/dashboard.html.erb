@@ -1,31 +1,36 @@
 <%= render 'shared/navbar' %>
-<h1>Dashboard</h1>
-<!-- username -->
-<p><%= current_user.username %></p>
-<!-- credits -->
-<% credits = current_user.credits %>
-<p><%= credits %></p>
-<!-- invested credits -->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <h1>Dashboard</h1>
+      <!-- username -->
+      <p><%= current_user.username %></p>
+      <!-- credits -->
+      <% credits = current_user.credits %>
+      <p><%= credits %></p>
+      <!-- invested credits -->
 
-<p><%= invested_credits = current_user.invested_credits %></p>
-  <!-- total credits -->
-<p><%= invested_credits + credits %></p>
->>>>>>> origin
+      <p><%= invested_credits = current_user.invested_credits %></p>
+        <!-- total credits -->
+      <p><%= invested_credits + credits %></p>
 
-<!-- card 2: conquistas
-infos, quanto ja investiu
-etc -->
+      <!-- card 2: conquistas
+      infos, quanto ja investiu
+      etc -->
 
-<!-- se wallet vazio link to stocks market (index de acoes) -->
-<%= link_to 'Wallet', dashboard_wallet_path %>
-<!-- cards com link pra wallet (index onde todas acoes pertencem ao current_user) -->
+      <!-- se wallet vazio link to stocks market (index de acoes) -->
+      <%= link_to 'Wallet', dashboard_wallet_path %>
+      <!-- cards com link pra wallet (index onde todas acoes pertencem ao current_user) -->
 
-<!-- link pro market -->
-<%= link_to 'Market', stocks_path %>
+      <!-- link pro market -->
+      <%= link_to 'Market', stocks_path %>
 
-<div class="card-info">
-  <div>
-    <h4>titulo da acao</h4>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, saepe! Eaque error vitae sit perferendis ducimus. Unde aut consequuntur eos impedit, dolor suscipit harum quia! Autem nihil quia in, dolorem!</p>
+      <div class="card-info">
+        <div>
+          <h4>titulo da acao</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, saepe! Eaque error vitae sit perferendis ducimus. Unde aut consequuntur eos impedit, dolor suscipit harum quia! Autem nihil quia in, dolorem!</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
