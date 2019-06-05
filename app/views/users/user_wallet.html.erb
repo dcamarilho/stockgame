@@ -1,0 +1,10 @@
+
+<% current_user.wallet.each do |key, value| %>
+<div>
+  <% stock = Stock.find(key.to_i) %>
+  <p>Price: <%= stock.price %></p>
+  <p>Name: <%= stock.name %></p>
+  <p>Variation: <%= stock.variation %></p>
+  <%= link_to 'See details', stock_path(stock) %>
+</div>
+<% end %>
