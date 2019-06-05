@@ -25,6 +25,7 @@ class UsersController < ApplicationController
   end
 
   def user_wallet
+    @wallet = current_user.wallet
   end
 
   private

@@ -8,4 +8,13 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true
 
   mount_uploader :photo, PhotoUploader
+
+  def invested_credits
+    invested_credits = 0
+    self.wallet.each do |key, value|
+      stock = Stock.find(key.to_i)
+      invested_credits += value * stock.price
+    end
+    invested_credits
+  end
 end
