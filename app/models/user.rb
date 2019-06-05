@@ -11,10 +11,14 @@ class User < ApplicationRecord
 
   def invested_credits
     invested_credits = 0
-    self.wallet.each do |key, value|
-      stock = Stock.find(key.to_i)
-      invested_credits += value * stock.price
+    if self.wallet
+      self.wallet.each do |key, value|
+        stock = Stock.find(key.to_i)
+        invested_credits += value * stock.price
+      end
+      invested_credits
+    else
+      invested_credits
     end
-    invested_credits
   end
 end
