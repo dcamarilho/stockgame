@@ -1,12 +1,39 @@
 .navbar-lewagon {
-  justify-content: space-between;
+  justify-content: center;
   background: white;
-}
+  background-color: $my-lightpurple;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+ }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.nav-link {
+  &:hover {
+    border-bottom: 2px solid white;
+  }
+}
+
+
+
+.dropdown-menu {
+  background-color: white;
+  border: 0.5px solid rgba(255, 255, 255, 0.7);
+}
+
+.dropdown-item {
+  color: $purple;
+
+  &:hover{
+    background-color: white;
+    color: white;
+    text-decoration: underline;
+    font-weight: bolder;
+  }
+
 }

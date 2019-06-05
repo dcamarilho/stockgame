@@ -1,4 +1,10 @@
-<h1>Stock game</h1>
-<!-- login/signup form -->
+<div class="container-home">
+  <div>
+    <h1><%= link_to 'Stock Game', dashboard_path, style: "color: white;" %></h1>
+  </div>
+    <!-- login/signup form -->
+  <div>
+    <%= link_to "START", new_user_session_path, class: "btn btn-outline-light" %>
+  </div>
+</div>
 
-<%= link_to "Login", new_user_session_path%>

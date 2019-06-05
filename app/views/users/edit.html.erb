@@ -1,13 +1,15 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
-
 <% if current_user == @user %>
-  <h1 style="text-align: center;">Edit profile</h1>
-
   <%= render 'form', user: current_user %>
   <br>
 <% else %>
-  <h3>Sorry <%= current_user.firstname %>, you can't edit other user's profile.</h3>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div class="form">
+        <h5>Sorry <%= current_user.name %>, you can't edit other user's profile.</h5>
+        <br>
+      <%= link_to 'Back', :back, class: "btn btn-lg btn-outline-dark btn-block text-uppercase" %>
+      </div>
+    </div>
+  </div>
 <% end %>
-  <br>
-<%= link_to 'Back', dashboard_path, class: 'btn btn-primary' %>
