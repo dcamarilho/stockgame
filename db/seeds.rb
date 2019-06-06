@@ -12,6 +12,8 @@ require 'nokogiri'
 
 stock_attributes = []
 
+
+
 list_of_stocks = %w(
 ABEV3.SA
 BTOW3.SA
@@ -24,6 +26,8 @@ BRKM5.SA
 BRFS3.SA
 CCRO3.SA
 CMIG4.SA
+CIEL3.SA
+CPLE6.SA
 )
 
 list_of_stocks.each do |stock|
@@ -36,7 +40,7 @@ list_of_stocks.each do |stock|
   current_value = doc.search('#quote-header-info > div:nth-child(3) div:nth-child(1) > span').text.strip
   current_variation = doc.search('#quote-header-info > div:nth-child(3) div:nth-child(1) > :nth-child(2)').text.strip
   # 4. For each item found, we extract its title and print it
-  stock_attributes << {name: stock, price: current_value, variation: /\((.*?)\)/.match(current_variation)[1]}
+  stock_attributes << {name: stock, price: current_value.gsub!(",",".").to_f, variation: /\((.*?)\)/.match(current_variation)[1]}
 end
 
 puts 'Creating stocks...'
@@ -44,6 +48,8 @@ puts 'Creating stocks...'
 Stock.create!(stock_attributes)
 
 puts "Created #{Stock.count} stocks"
+
+puts stock_attributes
 
 
 

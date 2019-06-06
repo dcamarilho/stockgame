@@ -25,7 +25,7 @@
             <div class="d-flex">
 
               <p id="inside-container"><%= image_tag("icons8-expensive-price-48(1).png") %> </p>
-              <p id="inside-container"><%= @stock.price * current_user.wallet[@stock.id.to_s] %></p>
+              <p id="inside-container"><%= current_user.wallet[@stock.id.to_s] ? @stock.price * current_user.wallet[@stock.id.to_s] : 0 %></p>
 
             </div>
           </div>
