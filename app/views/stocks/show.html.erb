@@ -9,7 +9,7 @@
 <div class="container-stock-show">
   <div class="d-flex justify-content-around ">
     <p> Quantity: <%= current_user.wallet[@stock.id.to_s] %></p>
-    <p> Invested credits: <%= @stock.price * current_user.wallet[@stock.id.to_s]  %></p>
+    <p> Invested credits: <%= current_user.wallet[@stock.id.to_s] ? @stock.price * current_user.wallet[@stock.id.to_s] : 0 %></p>
   </div>
   <div>
     <div class="d-flex justify-content-around ">
