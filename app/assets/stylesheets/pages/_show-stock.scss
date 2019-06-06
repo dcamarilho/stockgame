@@ -1,0 +1,40 @@
+.container-stock-show {
+  border: 1px #FFF9ED;
+  border-radius: 10px;
+  margin: 10px 15px 0 15px;
+  background-color: #FFF9ED;
+  box-shadow: 0px 5px 5px 5px #EAD8BB;
+}
+
+#name {
+  color: $my-lightpurple;
+  font-weight: bolder;
+  font-size: 36px;
+}
+
+#inside-container {
+  color: $purple;
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.container-stock-show {
+  height: 650px;
+}
+
+#out-container {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.style-image {
+  padding: 0 3px;
+}
+
+#inside-container {
+  padding: 0 3px;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  margin-right: 4px;
+}
