@@ -1,7 +1,8 @@
 .card-info {
   overflow: hidden;
   height: 148px;
-  background: linear-gradient(to right, #F4F4F4, #E8ECF2);
+  // background: linear-gradient(to right, #F2F8FF, #E5F1FF);
+  background-color: #F2F8FF;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: grid;
   align-items: center;
@@ -9,7 +10,7 @@
   margin: 20px;
   padding: 10px;
   opacity: 0.7;
-  color: black;
+  color: #3F5D7F;
   // &:hover {
   //   background-color: $gray;
   //   color: $orange;
@@ -29,6 +30,7 @@
   line-height: 1.4;
   opacity: 0.8;
   letter-spacing: 1px;
+  font-weight: bolder;
 }
 
 .card-content {
@@ -44,8 +46,22 @@
 
 #market {
   text-align: center;
+  font-weight: bolder;
+  a {
+    color: #3F5D7F;
+    font-weight: bolder;
+    font-size: 20px;
+    letter-spacing: 3px;
+  }
 }
 
 #wallet {
   text-align: center;
+  font-weight: bolder;
+  a {
+    color: #3F5D7F;
+    font-weight: bolder;
+    font-size: 20px;
+    letter-spacing: 3px;
+  }
 }
