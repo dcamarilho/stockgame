@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+
   root to: 'pages#home'
 
   resources :stocks, except: [:destroy] do
@@ -8,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :orders, only: [:show]
 
-  resources :users, only: [:edit, :update, :destroy, :show]
+  resources :users, only: [:show, :edit, :update, :destroy]
 
   get 'dashboard', to: 'users#dashboard'
 

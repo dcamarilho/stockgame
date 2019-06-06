@@ -47,7 +47,7 @@
         <hr class="my-4">
          <h5>Cancel my account</h5>
 
-        <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-outline-danger" %></p>
+        <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, style: "color: red; text-decoration: underline;" %></p>
 
         <%= link_to "Back", :back, class: "btn btn-lg btn-outline-dark btn-block text-uppercase" %>
       </div>
