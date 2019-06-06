@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def dashboard
     # @stocks = current_user.stocks
+    # @user = current_user
     @orders = current_user.orders
   end
 
