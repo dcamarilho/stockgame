@@ -17,7 +17,13 @@
 
 body {
   min-height: 100vh;
-  background: linear-gradient(to right, #E8ECF2, #F4F4F4);
+  background-color: white;
 }
 
+.container {
+  min-height: 93vh;
+}
 
+.row {
+  min-height: 93vh;
+}
