@@ -7,21 +7,34 @@
 }
 
 #name {
-  color: white;
-  font-style: bold;
+  color: $my-lightpurple;
+  font-weight: bolder;
   font-size: 36px;
 }
 
 #inside-container {
   color: $purple;
   font-size: 30px;
-  font-style: bold;
+  font-weight: bolder;
 }
 
 .container-stock-show {
   height: 650px;
 }
 
-#coin-pic {
+#out-container {
+  font-size: 20px;
+  font-weight: bolder;
+}
 
+.style-image {
+  padding: 0 3px;
+}
+
+#inside-container {
+  padding: 0 3px;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  margin-right: 4px;
 }
