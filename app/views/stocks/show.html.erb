@@ -1,35 +1,42 @@
 
-<div class="d-flex justify-content-center">
-  <p>Name: <%= @stock.name %></p>
+<div class="d-flex justify-content-center m-3">
+  <p id="name"><%= @stock.name %></p>
 </div>
 <div class="d-flex justify-content-around ">
-  <p> Variation: <%= @stock.variation %></p>
-  <p>R$: <%= @stock.price %></p>
+  <%= image_tag("icons8-expensive-price-48(1).png", height: "16", width: "16") %>
+  <p><%= @stock.price %></p>
+  <p><%= @stock.variation %>%</p>
+
 </div>
 <div class="container-stock-show">
-  <div class="d-flex justify-content-around ">
-    <p> Quantity: <%= current_user.wallet[@stock.id.to_s] %></p>
-    <p> Invested credits: <%= @stock.price * current_user.wallet[@stock.id.to_s]  %></p>
+  <div class="d-flex justify-content-around m-3 p-3">
+    <p id="inside-container">
+      <%= current_user.wallet[@stock.id.to_s] %></p>
+      <%= image_tag("stack-overflow (1).png") %>
+     <p id="inside-container">
+      <%= image_tag("icons8-expensive-price-48(1).png") %>
+      <%= @stock.price * current_user.wallet[@stock.id.to_s]  %></p>
   </div>
   <div>
-    <div class="d-flex justify-content-around ">
+    <div class="d-flex justify-content-around m-3">
       <div class= "btn btn-success">
         <%= @stock.price %>
       </div>
-      <div class= "btn btn-danger">
+      <div class= "btn btn-danger m-3" id="coin-pic">
         <%= @stock.price %>
       </div>
     </div>
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center m-3">
       <div class="btn btn-warning mt-3">
         <%= current_user.credits %>
       </div>
     </div>
-    <div class="d-flex justify-content-around ">
+    <div class="d-flex justify-content-around m-3">
       <div class="btn btn-info mt-3">
         <%= link_to 'Back', :back %>
       </div>
-      <div class="btn btn-warning mt-3">
+      <div class="btn btn-warning m-3">
+        Ok
       </div>
     </div>
 
@@ -38,14 +45,14 @@
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
     <%= f.error :user_insuficient_credit %>
 
-    <div class="form-inputs">
-      <%= f.input :quantity%>
+    <div class="form-inputs d-flex justify-content-center m-5">
+      <%= f.input :quantity %>
     </div>
 
-    <div class="form-actions">
+    <div class="form-actions d-flex justify-content-center mb-3">
       <%= f.button :submit, class: 'btn btn-outline-primary'%>
     </div>
-    <% end %> -->
+    <% end %>
   </div>
 
 <!-- card da acao igual do figma. (nome, price, variacao do dia, quantidade que o user tem da acao, numero de credits invested na acao, botoes de compra e venda (javascript) e ajax pra atualizar preco da acao. total de credits do usuario liquido.)
