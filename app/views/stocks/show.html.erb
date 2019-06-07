@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row" >
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-      <div class="d-flex justify-content-center m-3">
+      <div class="d-flex justify-content-center">
         <p id="name"><%= @stock.name %></p>
       </div>
       <div class="d-flex justify-content-around ">
@@ -13,23 +13,19 @@
         <div>
           <p id="out-container">
             <%= @stock.variation %>%</p>
-          </div>
         </div>
+      </div>
         <div class="container-stock-show">
-          <div class="d-flex justify-content-around m-3 p-3">
+          <div class="d-flex justify-content-around p-1">
             <div class="d-flex justify-content-around align-items-center">
               <p id="inside-container"><%= current_user.wallet[@stock.id.to_s] %></p>
               <%= image_tag("icons8-gg-48.png", height: "30", width: "30") %>
             </div>
-
             <div class="d-flex">
-
               <p id="inside-container"><%= image_tag("icons8-expensive-price-48(1).png") %> </p>
               <p id="inside-container"><%= current_user.wallet[@stock.id.to_s] ? @stock.price * current_user.wallet[@stock.id.to_s] : 0 %></p>
-
             </div>
           </div>
-
           <div class="d-flex justify-content-around mr-5 ml-5">
             <div class= "btn btn-success m-3">
               <%= @stock.price %>
@@ -52,20 +48,19 @@
               Ok
             </div>
           </div>
-
-          <%= simple_form_for [@stock, @order] do |f| %>
-          <%= f.error_notification %>
-          <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-          <%= f.error :user_insuficient_credit %>
-
-          <div class="form-inputs d-flex justify-content-center m-5">
-            <%= f.input :quantity %>
+          <div>
+            <%= simple_form_for [@stock, @order] do |f| %>
+              <%= f.error_notification %>
+              <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+              <%= f.error :user_insuficient_credit %>
+                <div class="form-inputs d-flex justify-content-center m-3">
+                  <%= f.input :quantity %>
+                </div>
+                <div class="form-actions d-flex justify-content-center">
+                  <%= f.button :submit, class: 'btn btn-outline-primary m-3'%>
+                </div>
+            <% end %>
           </div>
-
-          <div class="form-actions d-flex justify-content-center mb-3">
-            <%= f.button :submit, class: 'btn btn-outline-primary'%>
-          </div>
-          <% end %>
         </div>
       </div>
     </div>
