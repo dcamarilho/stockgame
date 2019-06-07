@@ -21,4 +21,9 @@ class User < ApplicationRecord
       invested_credits
     end
   end
+
+  def total
+    self.credits + self.invested_credits
+  end
+
 end
