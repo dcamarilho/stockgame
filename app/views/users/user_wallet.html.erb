@@ -13,17 +13,28 @@
         <% @wallet.each do |key, value| %>
           <% stock = Stock.find(key.to_i) %>
           <div class="card-info">
-            <div class="card-content">
-              <h5>Name:</h5> <p><%= link_to stock.name, stock_path(stock) %></p>
-            </div>
-            <div class="card-content">
-              <h5>Price:</h5> <p><%= stock.price %></p>
-            </div>
-            <div class="card-content">
-              <h5>Quantity:</h5> <p><%= value %></p>
-            </div>
-            <div class="card-content">
-              <h5>Variation:</h5> <p><%= stock.variation %></p>
+            <div class="d-flex align-items-center">
+              <div class="mr-4">
+                <% if stock.photo.file.nil? %>
+                  <%= image_tag 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png', height: '100px', weigth: '100px' %>
+                <% else %>
+                  <%= cl_image_tag stock.photo, height: '100px', weigth: '100px' %>
+                <% end %>
+              </div>
+              <div>
+                <div class="card-content">
+                  <h5>Name:</h5> <p><%= link_to stock.name, stock_path(stock) %></p>
+                </div>
+                <div class="card-content">
+                  <h5>Price:</h5> <p><%= stock.price %></p>
+                </div>
+                <div class="card-content">
+                  <h5>Quantity:</h5> <p><%= value %></p>
+                </div>
+                <div class="card-content">
+                  <h5>Variation:</h5> <p><%= stock.variation %></p>
+                </div>
+              </div>
             </div>
           </div>
         <% end %>
