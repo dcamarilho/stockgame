@@ -2,73 +2,75 @@
 <div class="container">
   <div class="row" >
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-      <div class="d-flex justify-content-center">
-        <p id="name"><%= @stock.name %></p>
-      </div>
-      <div class="d-flex justify-content-around ">
-        <div class="d-flex">
-          <%= image_tag("icons8-expensive-price-48(1).png", height: "30", width: "30") %>
-          <p id="out-container" class="ml-2"><%= @stock.price %></p>
+      <div id="show-stocks">
+        <div class="card-grande-header">
+          <div class="header-info">
+            <h4><%= @stock.name %></h4>
+            <%= image_tag("", height: "30", width: "30") %>
+          </div>
+          <div class="stock-info">
+            <div>
+              <%= image_tag("icons8-expensive-price-48(1).png", height: "30", width: "30") %>
+              <%= @stock.price %>
+            </div>
+            <div>
+              <%= @stock.variation %>
+            </div>
+          </div>
         </div>
-        <div>
-          <p id="out-container">
-            <%= @stock.variation %>%</p>
-        </div>
       </div>
-        <div class="container-stock-show">
-          <div class="d-flex justify-content-around p-1">
-            <div class="d-flex justify-content-around align-items-center">
-              <p id="inside-container"><%= current_user.wallet[@stock.id.to_s] %></p>
+      <div id="show-stocks">
+        <div class="card-grande">
+          <div class="wallet-info">
+            <div class="stock-quantity">
+              <h4><%= current_user.wallet[@stock.id.to_s] %></h4>
               <%= image_tag("icons8-gg-48.png", height: "30", width: "30") %>
-            </div>
-            <div class="d-flex">
-              <p id="inside-container"><%= image_tag("icons8-expensive-price-48(1).png") %> </p>
-              <p id="inside-container"><%= current_user.wallet[@stock.id.to_s] ? @stock.price * current_user.wallet[@stock.id.to_s] : 0 %></p>
+              </div>
+            <div class="stock-invested">
+              <%= image_tag("icons8-expensive-price-48(1).png", height: "30", width: "30") %>
+              <h4><%= current_user.wallet[@stock.id.to_s] ? @stock.price * current_user.wallet[@stock.id.to_s] : 0 %><h4>
             </div>
           </div>
+
+
+
           <div class="d-flex justify-content-around mr-5 ml-5">
-            <div class= "btn btn-success m-3">
+            <div class= "btn btn-success m-3" style="color: white; font-weight: bolder;">
               <%= @stock.price %>
             </div>
-            <div class= "btn btn-danger m-3" id="coin-pic">
+            <div class= "btn btn-danger m-3" id="coin-pic" style="color: white; font-weight: bolder;">
               <%= @stock.price %>
             </div>
           </div>
-          <div class="d-flex justify-content-center m-3">
-            <div class="btn btn-primary btn-block mt-3 m-3">
-               <%= image_tag("icons8-expensive-price-48(1).png", height: "30", width: "30") %>
-               <%= current_user.credits %>
+              <div class="d-flex justify-content-center">
+            <div class="btn btn-primary btn-block mt-3">
+                <div>
+                  <%= image_tag("icons8-expensive-price-48(1).png", height: "30", width: "30") %>
+                </div>
+                 <div id="btn-credits">
+                  <%= current_user.credits %>
+                 </div>
             </div>
           </div>
           <div class="d-flex justify-content-around m-3">
-            <div class="btn btn-info m-3">
-              <%= link_to 'Back', :back %>
-            </div>
-            <div class="btn btn-warning m-3">
+            <div class="btn btn-warning m-3" style="color: white; font-weight: bolder;">
               Ok
             </div>
           </div>
           <div>
-            <%= simple_form_for [@stock, @order] do |f| %>
-              <%= f.error_notification %>
-              <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-              <%= f.error :user_insuficient_credit %>
-                <div class="form-inputs d-flex justify-content-center m-3">
-                  <%= f.input :quantity %>
-                </div>
-                <div class="form-actions d-flex justify-content-center">
-                  <%= f.button :submit, class: 'btn btn-outline-primary m-3'%>
-                </div>
+          <%= render 'new_order', stock: @stock, order: @order %>
+
+          <div class="back-x">
+            <%= link_to :back, class: "button-x" do %>
+              <%= image_tag "https://cdn3.iconfinder.com/data/icons/interface/100/close_button-512.png" %>
             <% end %>
           </div>
         </div>
       </div>
+
+
     </div>
   </div>
+</div>
 
-<!-- card da acao igual do figma. (nome, price, variacao do dia, quantidade que o user tem da acao, numero de credits invested na acao, botoes de compra e venda (javascript) e ajax pra atualizar preco da acao. total de credits do usuario liquido.)
-
-  link back mercado de stocks (index)
-
--->
 
