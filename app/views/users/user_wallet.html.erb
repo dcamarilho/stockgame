@@ -1,12 +1,35 @@
-<ul>
-  <% @wallet.each do |key, value| %>
-    <li>
-      <% stock = Stock.find(key.to_i) %>
-      <p>Name: <%= stock.name %></p>
-      <p>Price: <%= stock.price %></p>
-      <p>Quantity <%= value %></p>
-      <p>Variation: <%= stock.variation %></p>
-      <%= link_to 'See details', stock_path(stock) %>
-    </li>
-  <% end %>
-</ul>
+<%= render 'shared/navbar' %>
+<div class="container">
+  <div class="row" >
+    <div id="stock-index-content">
+      <div>
+        <h3>Welcome to Your Wallet</h3>
+      </div>
+      <div>
+        <p>Here you can find your all your investiments!</p>
+      </div>
+    </div>
+      <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+        <% @wallet.each do |key, value| %>
+          <% stock = Stock.find(key.to_i) %>
+          <div class="card-info">
+            <div class="card-content">
+              <h5>Name:</h5> <p><%= link_to stock.name, stock_path(stock) %></p>
+            </div>
+            <div class="card-content">
+              <h5>Price:</h5> <p><%= stock.price %></p>
+            </div>
+            <div class="card-content">
+              <h5>Quantity:</h5> <p><%= value %></p>
+            </div>
+            <div class="card-content">
+              <h5>Variation:</h5> <p><%= stock.variation %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+  </div>
+</div>
+
+
+

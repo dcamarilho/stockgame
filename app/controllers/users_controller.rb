@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
 
+
+
   def dashboard
     # @stocks = current_user.stocks
     # @user = current_user
