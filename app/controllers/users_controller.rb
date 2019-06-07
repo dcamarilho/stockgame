@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
 
+  def index
+    @users = User.all.sort_by(&:total).reverse
+  end
+
   def dashboard
     # @stocks = current_user.stocks
     # @user = current_user

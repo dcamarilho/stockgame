@@ -9,6 +9,7 @@
 require 'open-uri'
 require 'json'
 require 'nokogiri'
+require 'faker'
 
 stock_attributes = []
 
@@ -50,6 +51,83 @@ Stock.create!(stock_attributes)
 puts "Created #{Stock.count} stocks"
 
 puts stock_attributes
+
+
+
+
+
+
+puts 'Creating users...'
+
+
+user_attributes = [
+{
+  name: Faker::Name.first_name,
+  username: Faker::Artist.name.downcase,
+  password: "password",
+  email: Faker::Internet.email,
+  wallet: {rand(1..10).to_s => rand(1..10)}
+},
+{
+  name: Faker::Name.first_name,
+  username: Faker::Artist.name.downcase,
+  password: "password",
+  email: Faker::Internet.email,
+  wallet: {rand(1..10).to_s => rand(1..10)}
+},
+{
+  name: Faker::Name.first_name,
+  username: Faker::Artist.name.downcase,
+  password: "password",
+  email: Faker::Internet.email,
+  wallet: {rand(1..10).to_s => rand(1..10)}
+},
+{
+  name: Faker::Name.first_name,
+  username: Faker::Artist.name.downcase,
+  password: "password",
+  email: Faker::Internet.email,
+  wallet: {rand(1..10).to_s => rand(1..10)}
+},
+{
+  name: Faker::Name.first_name,
+  username: Faker::Artist.name.downcase,
+  password: "password",
+  email: Faker::Internet.email,
+  wallet: {rand(1..10).to_s => rand(1..10)}
+},
+{
+  name: Faker::Name.first_name,
+  username: Faker::Artist.name.downcase,
+  password: "password",
+  email: Faker::Internet.email,
+  wallet: {rand(1..10).to_s => rand(1..10)}
+},
+{
+  name: Faker::Name.first_name,
+  username: Faker::Artist.name.downcase,
+  password: "password",
+  email: Faker::Internet.email,
+  wallet: {rand(1..10).to_s => rand(1..10)}
+},
+{
+  name: Faker::Name.first_name,
+  username: Faker::Artist.name.downcase,
+  password: "password",
+  email: Faker::Internet.email,
+  wallet: {rand(1..10).to_s => rand(1..10)}
+},
+
+]
+
+
+User.create!(user_attributes)
+
+puts "Created #{User.count} users"
+
+
+
+
 
 
 

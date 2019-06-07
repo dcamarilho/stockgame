@@ -3,36 +3,35 @@
   <div class="row" >
     <div id="stock-index-content">
       <div>
-        <h3>Welcome to Your Wallet</h3>
+        <h3>All the users!</h3>
       </div>
       <div>
-        <p>Here you can find your all your investiments!</p>
+        <p>Here you can find all the Users!</p>
       </div>
     </div>
       <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-        <% @wallet.each do |key, value| %>
-          <% stock = Stock.find(key.to_i) %>
+        <% @users.each do |user| %>
           <div class="card-info">
             <div class="d-flex align-items-center">
               <div class="mr-4">
-                <% if stock.photo.file.nil? %>
+                <% if user.photo.file.nil? %>
                   <%= image_tag 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png', height: '100px', weigth: '100px' %>
                 <% else %>
-                  <%= cl_image_tag stock.photo, height: '100px', weigth: '100px' %>
+                  <%= cl_image_tag user.photo, height: '100px', weigth: '100px' %>
                 <% end %>
               </div>
               <div>
                 <div class="card-content">
-                  <h5>Name:</h5> <p><%= link_to stock.name, stock_path(stock) %></p>
+                  <h5>Name:</h5> <p><%= user.name %></p>
                 </div>
                 <div class="card-content">
-                  <h5>Price:</h5> <p><%= stock.price %></p>
+                  <h5>Credits:</h5> <p><% credits = user.credits %><%= credits %></p>
                 </div>
                 <div class="card-content">
-                  <h5>Quantity:</h5> <p><%= value %></p>
+                  <h5>Invested Credits:</h5> <p><%= invested_credits = user.invested_credits %></p>
                 </div>
                 <div class="card-content">
-                  <h5>Variation:</h5> <p><%= stock.variation %></p>
+                  <h5>Total:</h5> <p><%= user.total %></p>
                 </div>
               </div>
             </div>
@@ -41,6 +40,3 @@
       </div>
   </div>
 </div>
-
-
-
