@@ -1,0 +1,11 @@
+ <%= simple_form_for [stock, order] do |f| %>
+              <%= f.error_notification %>
+              <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+              <%= f.error :user_insuficient_credit %>
+                <div class="form-inputs d-flex justify-content-center m-3">
+                  <%= f.input :quantity %>
+                </div>
+                <div class="form-actions d-flex justify-content-center">
+                  <%= f.button :submit, class: 'btn btn-outline-primary m-3'%>
+                </div>
+            <% end %>
