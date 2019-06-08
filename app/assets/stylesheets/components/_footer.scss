@@ -1,5 +1,5 @@
 .footer {
-  background: $light-gray;
+  background: $my-lightorange;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -13,11 +13,12 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-      height: 90px;
-    width: 105px;
+  height: 90px;
+  width: 105px;
 }
 .footer-links a {
-  opacity: 0.8;
+  color: $orange;
+  opacity: 0.7;
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
@@ -25,20 +26,20 @@
 
 .active {
   opacity: 1;
-  background-color: $blue;
+  background-color: $orange;
   height: 90px;
   width: 105px;
   border-radius: 10px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 
 
 }
 
-
 .active i {
-  color:white;
+  color: white;
 }
 // #market-icon {
 //   color: $blue;
