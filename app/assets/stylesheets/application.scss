@@ -18,6 +18,7 @@
 body {
   min-height: 100vh;
   background-color: white;
+  margin-bottom: 64px; /* margin bottom = footer height */
 }
 
 .container {
@@ -28,3 +29,6 @@ body {
   min-height: 93vh;
 }
 
+img {
+  border-radius: 8px;
+}

@@ -1,0 +1,64 @@
+.footer {
+  background: $light-gray;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: rgba(0,0,0,0.3);
+  bottom: 0;
+  height: 64px; /* height = body margin-bottom */
+  position: fixed;
+  width: 100%;
+}
+.footer-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+      height: 90px;
+    width: 105px;
+}
+.footer-links a {
+  opacity: 0.8;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+
+.active {
+  opacity: 1;
+  background-color: $blue;
+  height: 90px;
+  width: 105px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+
+}
+
+
+.active i {
+  color:white;
+}
+// #market-icon {
+//   color: $blue;
+//   &:hover {
+//   color: $purple;
+//   }
+// }
+
+// #wallet-icon {
+//   color: $blue;
+//   &:hover {
+//   color: $brown;
+
+//   }
+// }
+
+// #friends-icon {
+//   color: $blue;
+//   &:hover {
+//   color: $my-blue;
+
+//   }
+// }
