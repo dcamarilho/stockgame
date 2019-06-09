@@ -18,13 +18,17 @@
 body {
   min-height: 100vh;
   background-color: white;
+  margin-bottom: 64px; /* margin bottom = footer height */
 }
 
 .container {
-  min-height: 93vh;
+  min-height: 84vh;
 }
 
 .row {
-  min-height: 93vh;
+  min-height: 84vh;
 }
 
+img {
+  border-radius: 8px;
+}

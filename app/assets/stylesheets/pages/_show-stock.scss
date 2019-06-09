@@ -38,13 +38,12 @@
 .card-grande {
   position: absolute;
   overflow: hidden;
-  height: 584px;
+  height: 542px;
   width: 90%;
   background-color: $light-gray;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   border-radius: 30px;
   margin-top: -32px;
-
   padding-top: 42px;
   opacity: 0.9;
   color: #3F5D7F;
@@ -52,9 +51,9 @@
 
 .back-x {
   background-color: $gray;
-  padding: 13px;
+  padding: 8px;
   text-align: center;
-  margin-top: 20px;
+  margin-top: -3px;
   width: 100%;
   height: 11%;
 }
