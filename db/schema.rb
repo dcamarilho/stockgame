@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 2019_06_10_174347) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.string "username"
-    t.float "credits", default: 10000.0
+    t.float "credits"
     t.string "photo"
     t.jsonb "wallet", default: {}
     t.index ["email"], name: "index_users_on_email", unique: true
