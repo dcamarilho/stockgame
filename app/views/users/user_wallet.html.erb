@@ -8,6 +8,16 @@
       <div>
         <p>Here you can find your all your investiments!</p>
       </div>
+    <div class="card-info">
+      <div class="card-content">
+        <h5>Number of Stocks Invested:</h5> <p><%= current_user.number_of_stocks %></p>
+      </div>
+      <div class="card-content">
+        <h5>Total Invested Credits:</h5> <p><%= current_user.invested_credits %></p>
+      </div>
+      <div class="card-content">
+        <h5>Variation:</h5> <p><%= current_user.total - 10000 %></p>
+      </div>
     </div>
       <div class="col-xs-12 col-sm-4 col-sm-offset-4">
         <% @wallet.each do |key, value| %>
