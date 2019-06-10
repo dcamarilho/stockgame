@@ -43,7 +43,15 @@
                     <h5>Quantity:</h5> <p><%= value %></p>
                   </div>
                   <div class="card-content">
-                    <h5>Variation:</h5> <p><%= stock.variation %></p>
+                    <% if stock.variation.include?('+') %>
+                      <div id="variation-positive">
+                        <%= stock.variation %>
+                    </div>
+                    <% else %>
+                      <div id="variation-negative">
+                        <%= stock.variation %>
+                    </div>
+                  <% end %>
                   </div>
                 </div>
               </div>
@@ -53,4 +61,5 @@
       </div>
   </div>
 </div>
+
 <%= render 'shared/footer' %>

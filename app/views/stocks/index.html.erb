@@ -3,10 +3,16 @@
   <div class="row" >
     <div id="stock-index-content">
       <div>
-        <h3>Welcome to stocks Market</h3>
+        <h3>Welcome to stocks Market!</h3>
       </div>
       <div>
-        <p>Here you can find your next investiment!</p>
+        <%= form_tag stocks_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control search",
+            placeholder: "Find your next investiment!"
+          %>
+        <% end %>
       </div>
     </div>
       <div class="col-xs-12 col-sm-4 col-sm-offset-4">
@@ -22,13 +28,22 @@
               </div>
               <div>
                 <div class="card-content">
-                  <h5><%= link_to stock.fullname, stock_path(stock) %></h5>
+                  <p><%= link_to stock.fullname, stock_path(stock) %></p>
                 </div>
                 <div class="card-content">
-                  <h5>Price:</h5> <p><%= stock.price %></p>
+                  <p>Price: <%= stock.price %></p>
                 </div>
-                <div class="card-content">
-                  <h5>Variation:</h5> <p><%= stock.variation %></p>
+                <div class="card-content variation">
+                  <% if stock.variation.include?('+') %>
+                    <div id="variation-positive">
+                      <%= stock.variation %>
+                    </div>
+                  <% else %>
+                    <div id="variation-negative">
+                      <%= stock.variation %>
+                    </div>
+                  <% end %>
+
                 </div>
               </div>
             </div>

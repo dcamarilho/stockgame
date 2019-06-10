@@ -4,4 +4,19 @@
   margin-top: 10px;
   font-weight: bolder;
   color: $my-blue;
- }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h3 {
+    color: $purple;
+  }
+
+}
+
+.search {
+  width: 248px;
+  border: 1px solid $my-lightpurple;
+  border-radius: 20px;
+  text-align: center;
+}
+
