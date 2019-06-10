@@ -2,7 +2,11 @@ class StocksController < ApplicationController
   before_action :set_stock, only: [:show, :edit, :update]
 
   def index
-    @stocks = Stock.all
+    if params[:query].present?
+      @stocks = Stock.search_by_stock_name(params[:query])
+    else
+      @stocks = Stock.all
+    end
   end
 
   def show

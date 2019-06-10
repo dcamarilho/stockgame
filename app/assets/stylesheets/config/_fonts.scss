@@ -1,10 +1,11 @@
 // Import Google fonts
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
 @import url('https://fonts.googleapis.com/css?family=Bangers|Lato:300&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Black+Ops+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Jura:300,400,500,600,700&display=swap');
 // Define fonts for body and headers
-$body-font: 'Lato', sans-serif;
-$headers-font: 'Lato', sans-serif;
+$body-font: 'Jura', sans-serif;
+$headers-font: 'Black Ops One', cursive;
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
