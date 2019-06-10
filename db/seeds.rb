@@ -55,8 +55,9 @@ list_of_stocks.each do |stock|
   # 3. We search for the correct elements containing the items' title in our HTML doc
   current_value = doc.search('#quote-header-info > div:nth-child(3) div:nth-child(1) > span').text.strip
   current_variation = doc.search('#quote-header-info > div:nth-child(3) div:nth-child(1) > :nth-child(2)').text.strip
+  current_fullname = doc.search('#quote-header-info > div:nth-child(2) div:nth-child(1) > h1').text.strip[11..-1]
   # 4. For each item found, we extract its title and print it
-  stock_attributes << {name: stock, price: current_value.gsub!(",",".").to_f, variation: /\((.*?)\)/.match(current_variation)[1], remote_photo_url: list_of_images[i]}
+  stock_attributes << {name: stock, fullname: current_fullname ,price: current_value.gsub!(",",".").to_f, variation: /\((.*?)\)/.match(current_variation)[1], remote_photo_url: list_of_images[i]}
   i += 1
 end
 

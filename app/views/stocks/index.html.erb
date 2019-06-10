@@ -22,7 +22,7 @@
               </div>
               <div>
                 <div class="card-content">
-                  <h5>Name:</h5> <p><%= link_to stock.name, stock_path(stock) %></p>
+                  <h5><%= link_to stock.fullname, stock_path(stock) %></h5>
                 </div>
                 <div class="card-content">
                   <h5>Price:</h5> <p><%= stock.price %></p>
