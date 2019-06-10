@@ -1,0 +1,111 @@
+.progress2 {
+  padding: 6px;
+  border-radius: 30px;
+  background: rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+}
+// *************************************
+// 0% a 25% de Experience/Total do Level
+.progress-bar2_a {
+  height: 18px;
+  border-radius: 30px;
+  background-image:
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+  transition: 0.4s linear;
+  transition-property: width, background-color;
+}
+
+.progress-moved_a .progress-bar2_a {
+  width: 12%;
+  background-color: #EF476F;
+  animation: progressAnimationA 3s;
+}
+
+@keyframes progressAnimationA {
+  0%   { width: 5%; background-color: #F9BCCA;}
+  100% { width: 12%; background-color: #EF476F; }
+}
+
+// *************************************
+// 26% a 50% de Experience/Total do Level
+
+.progress-bar2_b {
+  height: 18px;
+  border-radius: 30px;
+  background-image:
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+  transition: 0.4s linear;
+  transition-property: width, background-color;
+}
+
+.progress-moved_b .progress-bar2_b {
+  width: 37%;
+  background-color: #EF476F;
+  animation: progressAnimationA 3s;
+}
+
+@keyframes progressAnimationB {
+  0%   { width: 5%; background-color: #F9BCCA;}
+  100% { width: 37%; background-color: #EF476F; }
+}
+
+
+// *************************************
+// 51% a 75% de Experience/Total do Level
+
+.progress-bar2_c {
+  height: 18px;
+  border-radius: 30px;
+  background-image:
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+  transition: 0.4s linear;
+  transition-property: width, background-color;
+}
+
+.progress-moved_c .progress-bar2_c {
+  width: 63%;
+  background-color: #EF476F;
+  animation: progressAnimationA 3s;
+}
+
+@keyframes progressAnimationC {
+  0%   { width: 5%; background-color: #F9BCCA;}
+  100% { width: 63%; background-color: #EF476F; }
+}
+
+// 76% a 99% de Experience/Total do Level
+
+.progress-bar2_d {
+  height: 18px;
+  border-radius: 30px;
+  background-image:
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+  transition: 0.4s linear;
+  transition-property: width, background-color;
+}
+
+.progress-moved_d .progress-bar2_d {
+  width: 90%;
+  background-color: #EF476F;
+  animation: progressAnimationA 3s;
+}
+
+@keyframes progressAnimationD {
+  0%   { width: 5%; background-color: #F9BCCA;}
+  100% { width: 90%; background-color: #EF476F; }
+}
+
+
+
+// .progress-moved .progress-bar2 {
+//   width: 50%;
+//   background-color: #EF476F;
+//   animation: progressAnimation 6s;
+// }
+
+// @keyframes progressAnimation {
+//   0%   { width: 5%; background-color: #F9BCCA;}
+//   100% { width: 50%; background-color: #EF476F; }
+// }
+
+

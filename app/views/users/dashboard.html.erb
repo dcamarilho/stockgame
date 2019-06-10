@@ -5,6 +5,14 @@
       <div class="card-info" id="dashboard">
         <span  style="color: #824AB2;"> ● ● ● ● ● ● ● ● ● ● ● ● </span>
             <h4>Hello, @<%= current_user.username %>!</h4>
+            <div class="container">
+              <div id="outbar">
+                <div id="inbar">
+                </div>
+              </div>
+              <p>XP <%= current_user.experience %>/<%= current_user.calculate_maxhp %></p>
+              <h5>Level <%= current_user.calculate_level %></h5>
+            </div>
         <!-- <div class="card-content mt-2">
             <h5>Credits:</h5><p><% credits = current_user.credits %><%= credits %></p>
         </div>
@@ -68,3 +76,7 @@
   </div>
 </div>
 <%= render 'shared/footer' %>
+
+<%= javascript_tag do %>
+<%= render(:partial => 'levelbar', :handlers => [:erb], :formats => [:js]) %>
+<% end %>

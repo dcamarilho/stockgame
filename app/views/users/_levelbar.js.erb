@@ -1,0 +1,78 @@
+
+const outBar = document.getElementById('outbar');
+const inBar = document.getElementById('inbar');
+
+const range = '<% current_user.calculate_range %>';
+
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  console.log('Hello')
+  console.log('<% current_user.calculate_range %>')
+  if (range == "a") {
+    outbar.classList.add("progress2", "progress-moved_a")
+    inbar.classList.add("progress-bar2_a")
+  } else if (range == "b") {
+    outbar.classList.add("progress2", "progress-moved_b")
+    inbar.classList.add("progress-bar2_b")
+  } else if (range == "c") {
+    outbar.classList.add("progress2", "progress-moved_c")
+    inbar.classList.add("progress-bar2_c")
+  } else {
+    outbar.classList.add("progress2", "progress-moved_d")
+    inbar.classList.add("progress-bar2_d")
+  }
+});
+
+
+
+// const plusButton = document.getElementById('button-plus');
+// const minusButton = document.getElementById('button-minus');
+
+// const stockInvested = document.getElementById('stock-invested');
+// const stockQuantity = document.getElementById('stock-quantity');
+
+// const orderQuantity = document.getElementById('order_quantity');
+// orderQuantity.value = 0
+
+// const currentCredits = document.getElementById('btn-credits');
+
+// // const orderButton = document.querySelector('.confirm');
+
+// // const confirmOrder = document.getElementById('confirm-order');
+
+
+
+
+
+
+
+
+
+
+// plusButton.addEventListener('click', (event) => {
+//   stockQuantity.innerText = parseInt(stockQuantity.innerText, 10) + 1
+//   stockInvested.innerText = (parseFloat(stockInvested.innerText, 10) + parseFloat(price, 10)).toFixed(2)
+//   orderQuantity.value = parseInt(orderQuantity.value, 10) + 1
+//   currentCredits.innerText = (parseFloat(currentCredits.innerText, 10) - parseFloat(price, 10)).toFixed(2)
+
+
+// });
+
+// minusButton.addEventListener('click', (event) => {
+//   stockQuantity.innerText = parseInt(stockQuantity.innerText, 10) - 1
+//   stockInvested.innerText = (parseFloat(stockInvested.innerText, 10) - parseFloat(price, 10)).toFixed(2)
+//   orderQuantity.value = parseInt(orderQuantity.value, 10) - 1
+//   currentCredits.innerText = (parseFloat(currentCredits.innerText, 10) + parseFloat(price, 10)).toFixed(2)
+
+
+
+
+// });
+
+// // orderButton.addEventListener('click', (event) => {
+// // alert('Confirm?');
+
+
+
+// // });
+
