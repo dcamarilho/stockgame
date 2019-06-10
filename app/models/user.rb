@@ -26,4 +26,11 @@ class User < ApplicationRecord
     self.credits + self.invested_credits
   end
 
+  def number_of_stocks
+    i = 0
+    self.wallet.each do |key, value|
+      value > 0 ? i += 1 : i += 0
+    end
+    i
+  end
 end

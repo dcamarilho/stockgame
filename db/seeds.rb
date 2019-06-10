@@ -13,12 +13,11 @@ require 'faker'
 
 stock_attributes = []
 
+i = 0
 
 list_of_stocks = %w(
 ABEV3.SA
-BTOW3.SA
 B3SA3.SA
-BBAS3.SA
 BBDC3.SA
 BBDC4.SA
 BRAP4.SA
@@ -28,6 +27,23 @@ CCRO3.SA
 CMIG4.SA
 CIEL3.SA
 CPLE6.SA
+PETR4.SA
+)
+
+list_of_images = %w(
+
+https://res.cloudinary.com/sailemarinho/image/upload/v1559935633/m4cd8g749wnse3zv48ss.png
+https://res.cloudinary.com/sailemarinho/image/upload/v1559935633/vaqijbkgcwe2qjg5eyek.png
+https://res.cloudinary.com/sailemarinho/image/upload/v1559935633/ngbzmdr6qghsn3fqdu36.png
+https://res.cloudinary.com/sailemarinho/image/upload/v1559935633/bqyoger3juvkkuexjt7f.png
+https://res.cloudinary.com/sailemarinho/image/upload/v1559935633/z3s4zmyjub5efyqoxwnj.png
+https://res.cloudinary.com/sailemarinho/image/upload/v1559935634/ijqlu4ktyqsjkday4f4j.png
+https://res.cloudinary.com/sailemarinho/image/upload/v1559935634/wuuh19eidjsvxokjpviy.png
+https://res.cloudinary.com/sailemarinho/image/upload/v1559935634/ehd3rgrfhe7rcknuloek.png
+https://res.cloudinary.com/sailemarinho/image/upload/v1559935634/dya4uynfww0hqimo0lnt.png
+https://res.cloudinary.com/sailemarinho/image/upload/v1559935634/xkc4twoysvyvd7leucxt.png
+https://res.cloudinary.com/sailemarinho/image/upload/v1559935634/x8u1xazpvnbbl6dluivr.png
+https://res.cloudinary.com/sailemarinho/image/upload/v1559935635/jiiwzjt9r97xoppgrz6v.png
 )
 
 list_of_stocks.each do |stock|
@@ -39,8 +55,10 @@ list_of_stocks.each do |stock|
   # 3. We search for the correct elements containing the items' title in our HTML doc
   current_value = doc.search('#quote-header-info > div:nth-child(3) div:nth-child(1) > span').text.strip
   current_variation = doc.search('#quote-header-info > div:nth-child(3) div:nth-child(1) > :nth-child(2)').text.strip
+  current_fullname = doc.search('#quote-header-info > div:nth-child(2) div:nth-child(1) > h1').text.strip[11..-1]
   # 4. For each item found, we extract its title and print it
-  stock_attributes << {name: stock, price: current_value.gsub!(",",".").to_f, variation: /\((.*?)\)/.match(current_variation)[1]}
+  stock_attributes << {name: stock, fullname: current_fullname ,price: current_value.gsub!(",",".").to_f, variation: /\((.*?)\)/.match(current_variation)[1], remote_photo_url: list_of_images[i]}
+  i += 1
 end
 
 puts 'Creating stocks...'
@@ -68,86 +86,86 @@ puts "Created #{Stock.count} stocks"
 #   "13": "https://res.cloudinary.com/sailemarinho/image/upload/v1559935634/ijqlu4ktyqsjkday4f4j.png"
 # }
 
-Stock.find(1).remote_photo_url:
+# Stock.find(1).remote_photo_url:
 
 
 
 
-puts 'Creating users...'
+# puts 'Creating users...'
 
 
-user_attributes = [
-{
-  name: Faker::Name.first_name,
-  username: Faker::Artist.name.downcase,
-  password: "password",
-  email: Faker::Internet.email,
-  wallet: {rand(1..10).to_s => rand(1..10)}
-  remote_photo_url: ""
-},
-{
-  name: Faker::Name.first_name,
-  username: Faker::Artist.name.downcase,
-  password: "password",
-  email: Faker::Internet.email,
-  wallet: {rand(1..10).to_s => rand(1..10)}
-  remote_photo_url: ""
-},
-{
-  name: Faker::Name.first_name,
-  username: Faker::Artist.name.downcase,
-  password: "password",
-  email: Faker::Internet.email,
-  wallet: {rand(1..10).to_s => rand(1..10)}
-  remote_photo_url: ""
-},
-{
-  name: Faker::Name.first_name,
-  username: Faker::Artist.name.downcase,
-  password: "password",
-  email: Faker::Internet.email,
-  wallet: {rand(1..10).to_s => rand(1..10)}
-  remote_photo_url: ""
-},
-{
-  name: Faker::Name.first_name,
-  username: Faker::Artist.name.downcase,
-  password: "password",
-  email: Faker::Internet.email,
-  wallet: {rand(1..10).to_s => rand(1..10)}
-  remote_photo_url: ""
-},
-{
-  name: Faker::Name.first_name,
-  username: Faker::Artist.name.downcase,
-  password: "password",
-  email: Faker::Internet.email,
-  wallet: {rand(1..10).to_s => rand(1..10)}
-  remote_photo_url: ""
-},
-{
-  name: Faker::Name.first_name,
-  username: Faker::Artist.name.downcase,
-  password: "password",
-  email: Faker::Internet.email,
-  wallet: {rand(1..10).to_s => rand(1..10)}
-  remote_photo_url: ""
-},
-{
-  name: Faker::Name.first_name,
-  username: Faker::Artist.name.downcase,
-  password: "password",
-  email: Faker::Internet.email,
-  wallet: {rand(1..10).to_s => rand(1..10)}
-  remote_photo_url: ""
-},
+# user_attributes = [
+# {
+#   name: Faker::Name.first_name,
+#   username: Faker::Artist.name.downcase,
+#   password: "password",
+#   email: Faker::Internet.email,
+#   wallet: {rand(1..10).to_s => rand(1..10)
+#   remote_photo_url: ""
+# },
+# {
+#   name: Faker::Name.first_name,
+#   username: Faker::Artist.name.downcase,
+#   password: "password",
+#   email: Faker::Internet.email,
+#   wallet: {rand(1..10).to_s => rand(1..10)
+#   remote_photo_url: ""
+# },
+# {
+#   name: Faker::Name.first_name,
+#   username: Faker::Artist.name.downcase,
+#   password: "password",
+#   email: Faker::Internet.email,
+#   wallet: {rand(1..10).to_s => rand(1..10)
+#   remote_photo_url: ""
+# },
+# {
+#   name: Faker::Name.first_name,
+#   username: Faker::Artist.name.downcase,
+#   password: "password",
+#   email: Faker::Internet.email,
+#   wallet: {rand(1..10).to_s => rand(1..10)
+#   remote_photo_url: ""
+# },
+# {
+#   name: Faker::Name.first_name,
+#   username: Faker::Artist.name.downcase,
+#   password: "password",
+#   email: Faker::Internet.email,
+#   wallet: {rand(1..10).to_s => rand(1..10)
+#   remote_photo_url: ""
+# },
+# {
+#   name: Faker::Name.first_name,
+#   username: Faker::Artist.name.downcase,
+#   password: "password",
+#   email: Faker::Internet.email,
+#   wallet: {rand(1..10).to_s => rand(1..10)
+#   remote_photo_url: ""
+# },
+# {
+#   name: Faker::Name.first_name,
+#   username: Faker::Artist.name.downcase,
+#   password: "password",
+#   email: Faker::Internet.email,
+#   wallet: {rand(1..10).to_s => rand(1..10)
+#   remote_photo_url: ""
+# },
+# {
+#   name: Faker::Name.first_name,
+#   username: Faker::Artist.name.downcase,
+#   password: "password",
+#   email: Faker::Internet.email,
+#   wallet: {rand(1..10).to_s => rand(1..10)
+#   remote_photo_url: ""
+# },
 
-]
+# ]
 
 
-User.create!(user_attributes)
+# User.create!(user_attributes)
 
-puts "Created #{User.count} users"
+# puts "Created #{User.count} users"
 
 
 
