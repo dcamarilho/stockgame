@@ -3,56 +3,39 @@
   <div class="row" >
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
       <div class="card-info">
-        <h4>Hello, @<%= current_user.username %>!</h4>
-        <div class="card-content mt-2">
+        <h4>OLAR, @<%= current_user.username %>!</h4>
+        <!-- <div class="card-content mt-2">
             <h5>Credits:</h5><p><% credits = current_user.credits %><%= credits %></p>
         </div>
         <div class="card-content">
             <h5>Invested:</h5> <p><%= invested_credits = current_user.invested_credits %></p>
-        </div>
+        </div> -->
         <div class="card-content">
             <h5>Total credits:</h5> <p><%= current_user.total %></p>
         </div>
       </div>
     </div>
-       <!--  <%# if @wallet.nil? %>
           <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-            <div class="card-info" id="market">
-              <h4>Buy Stocks:</h4>
-              <div>
-                  <p><%#= link_to 'Market', stocks_path %></p>
-              </div>
+            <div class="card-info">
+              <h4>Invested credits:</h4>
+
+                  <h5>Invested:</h5> <p><%= invested_credits = current_user.invested_credits %></p>
+
             </div>
           </div>
-        <%# else %>
+
           <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-            <div class="card-info" id="wallet">
-              <h4>Go to your wallet:</h4>
-              <div>
-                  <p><%#= link_to 'Wallet', dashboard_wallet_path %></p>
-              </div>
+            <div class="card-info">
+              <h4> Available credits:</h4>
+
+                  <h5>Credits:</h5><p><% credits = current_user.credits %><%= credits %></p>
             </div>
           </div>
-          <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-            <div class="card-info" id="market">
-              <h4>Buy Stocks:</h4>
-              <div>
-                  <p><%#= link_to 'Market', stocks_path %></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-            <div class="card-info" id="market">
-              <h4>Ranking!:</h4>
-              <div>
-                  <p><%#= link_to 'Ranking', users_path %></p>
-              </div>
-            </div>
-          </div>
-        <%# end %>
+
       <!-- card 2: conquistas
       infos, quanto ja investiu
       etc -->
-    </div>
+   </div>
   </div>
 </div>
+<%= render 'shared/footer' %>

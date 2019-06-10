@@ -1,0 +1,54 @@
+const plusButton = document.getElementById('button-plus');
+const minusButton = document.getElementById('button-minus');
+
+const stockInvested = document.getElementById('stock-invested');
+const stockQuantity = document.getElementById('stock-quantity');
+
+const orderQuantity = document.getElementById('order_quantity');
+orderQuantity.value = 0
+
+const currentCredits = document.getElementById('btn-credits');
+
+// const orderButton = document.querySelector('.confirm');
+
+// const confirmOrder = document.getElementById('confirm-order');
+
+
+
+
+
+
+
+
+const price = '<%= @stock.price %>';
+
+plusButton.addEventListener('click', (event) => {
+  stockQuantity.innerText = parseInt(stockQuantity.innerText, 10) + 1
+  stockInvested.innerText = (parseFloat(stockInvested.innerText, 10) + parseFloat(price, 10)).toFixed(2)
+  orderQuantity.value = parseInt(orderQuantity.value, 10) + 1
+  currentCredits.innerText = (parseFloat(currentCredits.innerText, 10) - parseFloat(price, 10)).toFixed(2)
+
+
+});
+
+minusButton.addEventListener('click', (event) => {
+  stockQuantity.innerText = parseInt(stockQuantity.innerText, 10) - 1
+  stockInvested.innerText = (parseFloat(stockInvested.innerText, 10) - parseFloat(price, 10)).toFixed(2)
+  orderQuantity.value = parseInt(orderQuantity.value, 10) - 1
+  currentCredits.innerText = (parseFloat(currentCredits.innerText, 10) + parseFloat(price, 10)).toFixed(2)
+
+
+
+
+});
+
+// orderButton.addEventListener('click', (event) => {
+// alert('Confirm?');
+
+
+
+// });
+
+
+
+
