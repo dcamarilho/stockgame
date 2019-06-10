@@ -1,6 +1,9 @@
 namespace :stocks do
   desc "sync stocks"
   task sync: :environment do
+
+    puts "Updating Stocks"
+
     list_of_stocks = %w(
     ABEV3.SA
     BTOW3.SA
@@ -32,6 +35,9 @@ namespace :stocks do
       stock.price = current_value.gsub!(",",".").to_f
       stock.variation = /\((.*?)\)/.match(current_variation)[1]
       stock.save
+
+      puts "Stocks Updated!"
+
     end
   end
 end
