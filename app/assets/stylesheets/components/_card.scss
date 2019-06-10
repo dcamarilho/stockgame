@@ -1,3 +1,97 @@
+#dashboard {
+  overflow: hidden;
+  height: 148px;
+  // background: linear-gradient(to right, #F2F8FF, #E5F1FF);
+  background-color: $white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: grid;
+  align-items: center;
+  border-radius: 8px;
+  margin: 20px;
+  padding: 10px;
+  opacity: 0.7;
+  color: $orange;
+}
+
+#dashboard h4 {
+  font-weight: bold;
+  margin-bottom: 3px;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #727C7A;
+}
+
+
+#dashboard p {
+  font-size: 18px;
+  line-height: 1.4;
+  opacity: 0.8;
+  letter-spacing: 1px;
+  font-weight: bolder;
+  color: #9E1633;
+}
+
+#dashboard h5 {
+  font-size: 20px;
+  font-weight: bolder;
+  margin-right: 10px;
+  letter-spacing: 1px;
+  color: #9E1633;
+}
+
+.box {
+  background-color: #FF206E;
+  border: 1px solid #FF206E;
+  box-shadow: 0px 5px #C41E3D;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+
+#box-2 {
+background-color: #1AC8ED;
+box-shadow: 0px 5px #087CA7;
+border: 1px solid #1AC8ED;
+padding-top: 5px;
+}
+
+#box-2 h5 {
+  color: #033860;
+}
+
+#box-2 h4 {
+  color: #033860;
+}
+
+#box-2 p {
+  color: #033860;
+}
+
+ #box-3 {
+background-color: #FBFF12;
+box-shadow: 0px 5px #EEBA0B;
+border: 1px solid #FBFF12;
+padding-top: 5px;
+ }
+
+ #box-3 h5 {
+  color: #C36F09;
+}
+
+ #box-3 h4 {
+  color: #C36F09;
+}
+
+
+#box-3 p {
+  color: #C36F09;
+}
+
+.box1 {
+  text-color: #FF206E;
+ }
+
+
 .card-info {
   overflow: hidden;
   height: 148px;
@@ -31,6 +125,21 @@
 .card-content {
   display: flex;
 }
+
+.card-content-dashboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    margin-bottom: 0 !important;
+    margin-left: 5px;
+  }
+
+  h4 {
+    margin-right: 5px;
+  }
+}
+
 
 .card-content h5 {
   font-size: 15px;
