@@ -14,7 +14,6 @@ require 'faker'
 stock_attributes = []
 
 
-
 list_of_stocks = %w(
 ABEV3.SA
 BTOW3.SA
@@ -50,9 +49,26 @@ Stock.create!(stock_attributes)
 
 puts "Created #{Stock.count} stocks"
 
-puts stock_attributes
 
+# puts "uploading pictures"
 
+# hash = {
+#   "1": "https://res.cloudinary.com/sailemarinho/image/upload/v1559935635/jiiwzjt9r97xoppgrz6v.png"
+#   "2":
+#   "3": "https://res.cloudinary.com/sailemarinho/image/upload/v1559935633/ngbzmdr6qghsn3fqdu36.png"
+#   "4":
+#   "5":
+#   "6":
+#   "7":
+#   "8": "https://res.cloudinary.com/sailemarinho/image/upload/v1559935634/xkc4twoysvyvd7leucxt.png"
+#   "9": "https://res.cloudinary.com/sailemarinho/image/upload/v1559935634/wuuh19eidjsvxokjpviy.png"
+#   "10": "https://res.cloudinary.com/sailemarinho/image/upload/v1559935634/dya4uynfww0hqimo0lnt.png"
+#   "11": "https://res.cloudinary.com/sailemarinho/image/upload/v1559935634/wuuh19eidjsvxokjpviy.png"
+#   "12": "https://res.cloudinary.com/sailemarinho/image/upload/v1559935634/ehd3rgrfhe7rcknuloek.png"
+#   "13": "https://res.cloudinary.com/sailemarinho/image/upload/v1559935634/ijqlu4ktyqsjkday4f4j.png"
+# }
+
+Stock.find(1).remote_photo_url:
 
 
 
@@ -67,6 +83,7 @@ user_attributes = [
   password: "password",
   email: Faker::Internet.email,
   wallet: {rand(1..10).to_s => rand(1..10)}
+  remote_photo_url: ""
 },
 {
   name: Faker::Name.first_name,
@@ -74,6 +91,7 @@ user_attributes = [
   password: "password",
   email: Faker::Internet.email,
   wallet: {rand(1..10).to_s => rand(1..10)}
+  remote_photo_url: ""
 },
 {
   name: Faker::Name.first_name,
@@ -81,6 +99,7 @@ user_attributes = [
   password: "password",
   email: Faker::Internet.email,
   wallet: {rand(1..10).to_s => rand(1..10)}
+  remote_photo_url: ""
 },
 {
   name: Faker::Name.first_name,
@@ -88,6 +107,7 @@ user_attributes = [
   password: "password",
   email: Faker::Internet.email,
   wallet: {rand(1..10).to_s => rand(1..10)}
+  remote_photo_url: ""
 },
 {
   name: Faker::Name.first_name,
@@ -95,6 +115,7 @@ user_attributes = [
   password: "password",
   email: Faker::Internet.email,
   wallet: {rand(1..10).to_s => rand(1..10)}
+  remote_photo_url: ""
 },
 {
   name: Faker::Name.first_name,
@@ -102,6 +123,7 @@ user_attributes = [
   password: "password",
   email: Faker::Internet.email,
   wallet: {rand(1..10).to_s => rand(1..10)}
+  remote_photo_url: ""
 },
 {
   name: Faker::Name.first_name,
@@ -109,6 +131,7 @@ user_attributes = [
   password: "password",
   email: Faker::Internet.email,
   wallet: {rand(1..10).to_s => rand(1..10)}
+  remote_photo_url: ""
 },
 {
   name: Faker::Name.first_name,
@@ -116,6 +139,7 @@ user_attributes = [
   password: "password",
   email: Faker::Internet.email,
   wallet: {rand(1..10).to_s => rand(1..10)}
+  remote_photo_url: ""
 },
 
 ]
