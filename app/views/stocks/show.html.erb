@@ -29,7 +29,7 @@
         <div class="card-grande">
           <div class="wallet-info">
             <div class="stock-quantity">
-              <h4 id="stock-quantity"><%= current_user.wallet[@stock.id.to_s] %></h4>
+              <h4 id="stock-quantity"><%= current_user.wallet[@stock.id.to_s] || 0 %></h4>
               <%= image_tag("icons8-gg-48.png", height: "30", width: "30") %>
               </div>
             <div id="stock-invested" class="stock-invested">
