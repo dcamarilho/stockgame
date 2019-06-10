@@ -27,6 +27,8 @@
 
   h4 {
     margin-right: 15px;
+    font-weight: bolder;
+    color: $purple;
   }
 }
 
@@ -34,15 +36,32 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  font-weight: bolder;
+  color: $purple;
   img {
     margin-right: 8px;
   }
 }
 
+#variation-positive {
+  background-color: $green;
+  border-radius: 5px;
+  color: white;
+  width: 58px;
+}
+
+#variation-negative {
+  background-color: $pink;
+  border-radius: 5px;
+  color: white;
+  width: 58px;
+}
+
+
 .card-grande {
   position: absolute;
   overflow: hidden;
-  height: 542px;
+  height: 508px;
   width: 90%;
   background-color: $light-gray;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -53,11 +72,29 @@
   color: #3F5D7F;
 }
 
+#new_order  {
+  margin-top: -68px;
+  & .confirm {
+    font-size: 18px;
+    background-color: $my-lightpurple;
+    color: white;
+    font-weight: bolder;
+    border: 1px solid $my-lightpurple;
+    border-radius: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+
+  }
+}
+.buy-sell-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 38px;
+}
 .back-x {
   background-color: $gray;
   padding: 8px;
   text-align: center;
-  margin-top: -3px;
+  margin-top: 95px;
   width: 100%;
   height: 11%;
 }
@@ -72,6 +109,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .stock-quantity {
@@ -79,6 +118,10 @@
   align-items: flex-start;
   justify-content: space-around;
   width: 45%;
+  & h4 {
+    font-weight: bolder;
+    color: $purple;
+  }
 }
 
 
@@ -88,6 +131,10 @@
   align-items: flex-start;
   justify-content: space-around;
   width: 45%;
+   & h4 {
+    font-weight: bolder;
+    color: $purple;
+  }
 }
 
 
