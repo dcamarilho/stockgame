@@ -1,5 +1,5 @@
 .footer {
-  background: $my-lightorange;
+  background: $my-lightpurple;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -17,7 +17,7 @@
   width: 105px;
 }
 .footer-links a {
-  color: $orange;
+  color: $purple;
   opacity: 0.7;
   text-decoration: none;
   font-size: 24px;
@@ -26,7 +26,7 @@
 
 .active {
   opacity: 1;
-  background-color: $orange;
+  background-color: $purple;
   height: 90px;
   width: 105px;
   border-radius: 10px;
