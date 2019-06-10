@@ -5,8 +5,8 @@
       <div id="show-stocks">
         <div class="card-grande-header">
           <div class="header-info">
-            <h4><%= @stock.name %></h4>
-            <%= image_tag("", height: "30", width: "30") %>
+            <%= cl_image_tag(@stock.photo, height: "90", width: "90") %>
+            <h4><%= @stock.fullname %></h4>
           </div>
           <div class="stock-info">
             <div>
@@ -42,12 +42,12 @@
 
           <div class="buy-sell-buttons">
             <div id="button-minus">
-              <%= image_tag("iconarrow.png", height: "40", width: "40") %>
+              <%= image_tag("arrow_mirrored.png", height: "50", width: "50", style: "transform: rotate(135deg)") %>
               <i class="fas fa-minus-circle"></i>
             </div>
             <div id="button-plus">
               <i class="fas fa-plus-circle"></i>
-              <%= image_tag("iconarrow.png", height: "40", width: "40") %>
+              <%= image_tag("arrow_mirrored.png", height: "50", width: "50", style: "transform: rotate(-30deg)") %>
             </div>
           </div>
 

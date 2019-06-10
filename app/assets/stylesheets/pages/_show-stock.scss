@@ -9,35 +9,42 @@
 
 .card-grande-header {
   overflow: hidden;
-  height: 80px;
+  height: 150px;
   width: 300px;
   z-index: 1;
   background-color: $gray;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-  border-radius: 52px;
+  border-radius: 50px;
   margin: 8px;
-  padding: 8px;
   color: #3F5D7F;
 }
 
 .header-info {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 10px;
+  padding-left: 10px;
 
   h4 {
-    margin-right: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     font-weight: bolder;
     color: $purple;
+    font-size: 20px;
   }
 }
 
 .stock-info {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   font-weight: bolder;
+  margin-top: -70px;
   color: $purple;
+  padding-left: 15px;
+  padding-right: 20px;
   img {
     margin-right: 8px;
   }
