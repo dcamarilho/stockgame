@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
-
-  root to: 'pages#home'
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   resources :stocks, except: [:destroy] do
     resources :orders, only: [:new, :create]
@@ -15,5 +13,6 @@ Rails.application.routes.draw do
 
   get 'dashboard/wallet', to: 'users#user_wallet'
 
+  root to: 'pages#home'
 
 end

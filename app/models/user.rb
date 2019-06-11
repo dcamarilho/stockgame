@@ -1,13 +1,22 @@
 class User < ApplicationRecord
   has_many :orders
   has_many :stocks, through: :orders
-
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+  devise :omniauthable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:facebook]
 
   validates :username, presence: true, uniqueness: true
 
   mount_uploader :photo, PhotoUploader
+
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.email = auth.info.email
+      user.provider = auth.provider
+      user.username = auth.info.name
+      user.uid = auth.uid
+      user.password = Devise.friendly_token[0,20]
+    end
+  end
 
   def invested_credits
     invested_credits = 0
