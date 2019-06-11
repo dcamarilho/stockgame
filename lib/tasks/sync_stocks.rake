@@ -2,6 +2,14 @@ namespace :stocks do
   desc "sync stocks"
   task sync: :environment do
 
+    puts "Checking Users Credits"
+
+    total_before = {}
+    User.all.each do |user|
+      total_before[user.id] = user.total
+    end
+
+
     puts "Updating Stocks"
 
     list_of_stocks = %w(
@@ -62,7 +70,28 @@ namespace :stocks do
       stock.variation = /\((.*?)\)/.match(current_variation)[1]
       stock.save
 
-      puts "Stocks Updated!"
+      puts "#{stock.name} Updated!"
     end
+
+    puts "Updating Users Total Credits and XP"
+
+
+    total_after = {}
+    User.all.each do |user|
+      total_after[user.id] = user.total
+    end
+
+
+    User.all.each do |user|
+      delta = (total_after[user.id] - total_before[user.id])
+      if delta > 0
+        puts "More XP to #{user.name}"
+        user.experience += (delta * 10)
+        user.save
+      end
+    end
+
+    puts "Total Credits and XP updated!"
+
   end
 end

@@ -12,7 +12,8 @@ class OrdersController < ApplicationController
 
     if @order.save
       flash[:notice] = "Congratulations! #{@order.quantity.abs} #{@order.stock.name} #{@order.quantity.negative? ? 'removed from' : 'added to' } your wallet."
-
+      current_user.experience += 5
+      current_user.save
       redirect_to dashboard_wallet_path
     else
       # Caso ela nao seja salva, retorna para a pagina anterior com uma mensagem de erro
