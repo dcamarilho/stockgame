@@ -30,8 +30,9 @@
                 <div class="card-content">
                   <p><%= link_to stock.fullname, stock_path(stock) %></p>
                 </div>
-                <div class="card-content">
-                  <p>Price: <%= stock.price %></p>
+                <div class="card-content pb-1">
+                  <%= image_tag("money-wallet.png", height: "30", widthth: "30") %>
+                  <p style="padding-left: 5px; padding-top: 2px;"><%= stock.price %></p>
                 </div>
                 <div class="card-content variation">
                   <% if stock.variation.include?('+') %>

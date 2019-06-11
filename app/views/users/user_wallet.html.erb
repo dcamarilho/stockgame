@@ -34,7 +34,7 @@
             </div>
             <div>
               <div class="card-content">
-                <h5><%= link_to stock.fullname, stock_path(stock) %></h5>
+                <p><%= link_to stock.fullname, stock_path(stock) %></p>
               </div>
               <div class="card-content">
 
@@ -42,7 +42,7 @@
                   <p class="coin-p"><%= stock.price %></p>
                 </div>
                   <div class="card-content">
-                    <h5>Quantity:</h5> <p><%= value %></p>
+                    <p>Quantity:</p> <p><%= value %></p>
                   </div>
                   <div class="card-content">
                     <% if stock.variation.include?('+') %>
