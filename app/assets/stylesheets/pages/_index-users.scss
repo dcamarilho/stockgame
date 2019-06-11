@@ -5,14 +5,6 @@
   border: 3px dotted $purple;
 }
 
-.avatar-users:hover {
-  height: 120px;
-  width: 120px;
-  border-radius: 50%;
-  border: 3px dotted $purple;
-}
-
-
 .no-pic-users {
   height: 90px;
   width: 90px;
@@ -21,10 +13,18 @@
 }
 
 p {
-color: #727C7A; ;
+  color: #727C7A; ;
 }
 
 .card-info:hover {
-background-color:$my-lightpurple;
-box-shadow: 0 5px $purple;
+  background-color:$my-lightpurple;
+  box-shadow: 0 5px $purple;
+  .avatar-users {
+   height: 120px;
+   width: 120px;
+ }
+ .no-pic-users {
+  height: 120px;
+  width: 120px;
+  }
 }
