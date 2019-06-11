@@ -1,7 +1,36 @@
 .coin-p {
 justify-content: center;
 align-itemS:center;
-margin-left: 5px;
+margin-left: 10px;
 margin-bottom: -3px !important;
 margin-top: 2px;
+}
+
+#stock-index-content {
+  p {
+    color: $purple;
+    font-size: 20px;
+    font-weight: 700;
+
+  }
+}
+#wallet {
+  justify-content: space-around;
+  i {
+    margin-left: 10px;
+    font-size: 30px;
+    color: $yellow;
+  }
+}
+
+#evolution {
+  & #variation-positive {
+    width: 85px;
+    color: white;
+  }
+
+  & #variation-negative {
+    width: 85px;
+    color: white;
+  }
 }

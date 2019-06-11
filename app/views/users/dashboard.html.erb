@@ -13,12 +13,6 @@
               <p>XP <%= current_user.experience %>/<%= current_user.calculate_maxhp %></p>
               <h5>Level <%= current_user.calculate_level %></h5>
             </div>
-        <!-- <div class="card-content mt-2">
-            <h5>Credits:</h5><p><% credits = current_user.credits %><%= credits %></p>
-        </div>
-        <div class="card-content">
-            <h5>Invested:</h5> <p><%= invested_credits = current_user.invested_credits %></p>
-          </div> -->
         <span style="margin-left: 160px; color: #824AB2;">● ● ● ● ● ● ● ● ● ● ● ● </span>
       </div>
     </div>
@@ -30,7 +24,7 @@
           <h4 style="color: #9E1633">Total</h4>
           <div class="card-content-dashboard justify-content-center">
             <%= image_tag("money-dashboard3.png", height: "30", width: "30") %>
-            <p><%= current_user.total %></p>
+            <p><%= current_user.total.round(2) %></p>
           </div>
         </div>
       </section>
@@ -45,7 +39,7 @@
           <h4>Invested</h4>
           <div class="card-content-dashboard justify-content-center">
             <%= image_tag("money-dashboard.png", height: "30", width: "30") %>
-            <p><%= invested_credits = current_user.invested_credits %></p>
+            <p><%= invested_credits = current_user.invested_credits.round(2) %></p>
           </div>
         </div>
       </section>
@@ -61,7 +55,7 @@
         <h4> Available</h4>
         <div class="card-content-dashboard justify-content-center">
           <%= image_tag("money-dashboard2.png", height: "30", width: "30") %>
-          <p><% credits = current_user.credits %><%= credits %></p>
+          <p><%= current_user.credits.round(2) %></p>
         </div>
       </div>
     </section>
