@@ -12,7 +12,6 @@ class Order < ApplicationRecord
   after_save :update_credit
   after_save :update_user_wallet
 
-
   private
 
   def calcule_amount
