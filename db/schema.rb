@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_11_183623) do
+ActiveRecord::Schema.define(version: 2019_06_11_190800) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 2019_06_11_183623) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.string "username"
-    t.float "credits", default: 10000.0
+    t.float "credits", default: 1000.0
     t.string "photo"
     t.jsonb "wallet", default: {}
     t.integer "experience", default: 0

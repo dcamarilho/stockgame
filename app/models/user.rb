@@ -95,6 +95,6 @@ class User < ApplicationRecord
   end
 
   def evolution
-    (self.total - 10000) * 100
+    (self.total - 1000) * 100
   end
 end
