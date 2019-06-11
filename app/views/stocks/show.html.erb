@@ -67,7 +67,7 @@
             </div>
           </div> -->
           <div>
-          <%= render 'new_order', stock: @stock, order: @order %>
+          <%= render 'stocks/new_order', stock: @stock, order: @order %>
 
           <div class="back-x">
             <%= link_to :back, class: "button-x" do %>
@@ -83,5 +83,5 @@
 <%= render 'shared/footer' %>
 
 <%= javascript_tag do %>
-<%= render(:partial => 'quantity', :handlers => [:erb], :formats => [:js]) %>
+  <%= render(partial: 'stocks/quantity', :handlers => [:erb], :formats => [:js]) %>
 <% end %>
