@@ -11,82 +11,195 @@ require 'json'
 require 'nokogiri'
 require 'faker'
 
-stock_attributes = []
+# stock_attributes = []
 
-i = 0
+# i = 0.2
 
-list_of_stocks = %w(
-ABEV3.SA
-B3SA3.SA
-BBDC3.SA
-BBDC4.SA
-BRAP4.SA
-BRKM5.SA
-BRFS3.SA
-CCRO3.SA
-CMIG4.SA
-CIEL3.SA
-CPLE6.SA
-PETR4.SA
-)
+# list_of_stocks = %w(
+# ABEV3.SA
+# B3SA3.SA
+# BBDC3.SA
+# BBDC4.SA
+# BRAP4.SA
+# BRKM5.SA
+# BRFS3.SA
+# CCRO3.SA
+# CMIG4.SA
+# CIEL3.SA
+# CPLE6.SA
+# PETR4.SA
+# )
 
-list_of_images = %w(
+# list_of_images = %w(
 
-https://res.cloudinary.com/sailemarinho/image/upload/v1559935633/m4cd8g749wnse3zv48ss.png
-https://res.cloudinary.com/sailemarinho/image/upload/v1559935633/vaqijbkgcwe2qjg5eyek.png
-https://res.cloudinary.com/sailemarinho/image/upload/v1559935633/ngbzmdr6qghsn3fqdu36.png
-https://res.cloudinary.com/sailemarinho/image/upload/v1559935633/bqyoger3juvkkuexjt7f.png
-https://res.cloudinary.com/sailemarinho/image/upload/v1559935633/z3s4zmyjub5efyqoxwnj.png
-https://res.cloudinary.com/sailemarinho/image/upload/v1559935634/ijqlu4ktyqsjkday4f4j.png
-https://res.cloudinary.com/sailemarinho/image/upload/v1559935634/wuuh19eidjsvxokjpviy.png
-https://res.cloudinary.com/sailemarinho/image/upload/v1559935634/ehd3rgrfhe7rcknuloek.png
-https://res.cloudinary.com/sailemarinho/image/upload/v1559935634/dya4uynfww0hqimo0lnt.png
-https://res.cloudinary.com/sailemarinho/image/upload/v1559935634/xkc4twoysvyvd7leucxt.png
-https://res.cloudinary.com/sailemarinho/image/upload/v1559935634/x8u1xazpvnbbl6dluivr.png
-https://res.cloudinary.com/sailemarinho/image/upload/v1559935635/jiiwzjt9r97xoppgrz6v.png
-)
+# https://res.cloudinary.com/sailemarinho/image/upload/v1559935633/m4cd8g749wnse3zv48ss.png
+# https://res.cloudinary.com/sailemarinho/image/upload/v1559935633/vaqijbkgcwe2qjg5eyek.png
+# https://res.cloudinary.com/sailemarinho/image/upload/v1559935633/ngbzmdr6qghsn3fqdu36.png
+# https://res.cloudinary.com/sailemarinho/image/upload/v1559935633/bqyoger3juvkkuexjt7f.png
+# https://res.cloudinary.com/sailemarinho/image/upload/v1559935633/z3s4zmyjub5efyqoxwnj.png
+# https://res.cloudinary.com/sailemarinho/image/upload/v1559935634/ijqlu4ktyqsjkday4f4j.png
+# https://res.cloudinary.com/sailemarinho/image/upload/v1559935634/wuuh19eidjsvxokjpviy.png
+# https://res.cloudinary.com/sailemarinho/image/upload/v1559935634/ehd3rgrfhe7rcknuloek.png
+# https://res.cloudinary.com/sailemarinho/image/upload/v1559935634/dya4uynfww0hqimo0lnt.png
+# https://res.cloudinary.com/sailemarinho/image/upload/v1559935634/xkc4twoysvyvd7leucxt.png
+# https://res.cloudinary.com/sailemarinho/image/upload/v1559935634/x8u1xazpvnbbl6dluivr.png
+# https://res.cloudinary.com/sailemarinho/image/upload/v1559935635/jiiwzjt9r97xoppgrz6v.png
+# )
 
-list_of_stocks.each do |stock|
-  filepath = "https://br.financas.yahoo.com/quote/#{stock}?p=#{stock}"
-  # 1. We get the HTML page content
-  html_content = open(filepath).read
-  # 2. We build a Nokogiri document from this file
-  doc = Nokogiri::HTML(html_content)
-  # 3. We search for the correct elements containing the items' title in our HTML doc
-  current_value = doc.search('#quote-header-info > div:nth-child(3) div:nth-child(1) > span').text.strip
-  current_variation = doc.search('#quote-header-info > div:nth-child(3) div:nth-child(1) > :nth-child(2)').text.strip
-  current_fullname = doc.search('#quote-header-info > div:nth-child(2) div:nth-child(1) > h1').text.strip[11..-1]
-  # 4. For each item found, we extract its title and print it
-  stock_attributes << {name: stock, fullname: current_fullname ,price: current_value.gsub!(",",".").to_f, variation: /\((.*?)\)/.match(current_variation)[1], remote_photo_url: list_of_images[i]}
-  i += 1
-end
+# list_of_stocks.each do |stock|
+#   filepath = "https://br.financas.yahoo.com/quote/#{stock}?p=#{stock}"
+#   # 1. We get the HTML page content
+#   html_content = open(filepath).read
+#   # 2. We build a Nokogiri document from this file
+#   doc = Nokogiri::HTML(html_content)
+#   # 3. We search for the correct elements containing the items' title in our HTML doc
+#   current_value = doc.search('#quote-header-info > div:nth-child(3) div:nth-child(1) > span').text.strip
+#   current_variation = doc.search('#quote-header-info > div:nth-child(3) div:nth-child(1) > :nth-child(2)').text.strip
+#   current_fullname = doc.search('#quote-header-info > div:nth-child(2) div:nth-child(1) > h1').text.strip[11..-1]
+#   # 4. For each item found, we extract its title and print it
+#   stock_attributes << {name: stock, fullname: current_fullname ,price: current_value.gsub!(",",".").to_f, variation: /\((.*?)\)/.match(current_variation)[1], remote_photo_url: list_of_images[i]}
+#   i += 1
+# end
 
-puts 'Creating stocks...'
+# puts 'Creating stocks...'
 
-Stock.create!(stock_attributes)
+# Stock.create!(stock_attributes)
 
-puts "Created #{Stock.count} stocks"
+# puts "Created #{Stock.count} stocks"
+
+ puts 'Creating users...'
 
 
-# puts "uploading pictures"
+ user_attributes = [
+ {
+   name: "Adriano Araujo",
+   username: "freizao_",
+   password: "123456",
+   email: "adriano.araujo@stock.com",
+   wallet: {},
+   remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204765/udacd4e9bpg8awjy3ubm.jpg"
+ },
+  {
+   name: "Caio Bastone",
+   username: "cainho",
+   password: "123456",
+   email: "caio.bastone@stock.com",
+   wallet: {},
+   remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204765/x0ldfhfppr9jkobsv0ih.jpg"
+ },
+   {
+   name: "Daniel Amarilho",
+   username: "dani",
+   password: "123456",
+   email: "daniel.amarilho@stock.com",
+   wallet: {},
+   remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204765/p052mtk0h4jtblly5ay4.jpg"
+ },
+   {
+   name: "Daniel Silva",
+   username: "carioca",
+   password: "123456",
+   email: "daniel.silva@stock.com",
+   wallet: {},
+   remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204764/rfvzrqjdizposgpw79kz.jpg"
+ },
+   {
+   name: "Diego Pisani",
+   username: "diego",
+   password: "123456",
+   email: "diego.pisani@stock.com",
+   wallet: {},
+   remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204764/cyfgyyye9kxczvzzynw5.jpg"
+ },
+   {
+   name: "Gabriel Gil",
+   username: "gabriel",
+   password: "123456",
+   email: "gabriel.gil@stock.com",
+   wallet: {},
+   remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204764/eybhdqm9ovdryluv16zp.jpg"
+ },
+   {
+   name: "João Apel",
+   username: "jão!",
+   password: "123456",
+   email: "joao.apel@stock.com",
+   wallet: {},
+   remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204764/cq30gpgqk5rcxrxno5il.jpg"
+ },
+   {
+   name: "Kaynan Silva",
+   username: "kaynan",
+   password: "123456",
+   email: "kaynan.silva@stock.com",
+   wallet: {},
+   remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204764/dpmsizluccouvystt78l.jpg"
+ },
+   {
+   name: "Lucas Souza",
+   username: "magrao",
+   password: "123456",
+   email: "lucas.souza@stock.com",
+   wallet: {},
+   remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204764/ctxmqkbkjdyaoyjkjbei.jpg"
+ },
+   {
+   name: "Marcelo Escobar",
+   username: "escobar",
+   password: "123456",
+   email: "marcelo.escobar@stock.com",
+   wallet: {},
+   remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204764/vbp7v2bmay4gmn13lbv2.jpg"
+ },
+    {
+   name: "Miucha Salge",
+   username: "miucha",
+   password: "123456",
+   email: "miucha.salge@stock.com",
+   wallet: {},
+   remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204765/g39j5mou58k6gx9uz8bc.jpg"
+ },
+    {
+   name: "Raphael Schmidt",
+   username: "rapha",
+   password: "123456",
+   email: "raphael.schmidt@stock.com",
+   wallet: {},
+   remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204764/vuvophomdc88ctvxaovp.jpg"
+ },
+    {
+   name: "Saile Ribeiro",
+   username: "sailet",
+   password: "123456",
+   email: "saile.ribeiro@stock.com",
+   wallet: {},
+   remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204764/h1p0dwjhob5gtefshwln.jpg"
+ },
+    {
+   name: "Thiago Zanette",
+   username: "thiagao",
+   password: "123456",
+   email: "thiago.zanette@stock.com",
+   wallet: {},
+   remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204764/rvxcdanoidvhpprnizgq.jpg"
+ },
+    {
+   name: "Ricardo Ribeiro",
+   username: "ricardo",
+   password: "123456",
+   email: "ricardo.ribeiro@stock.com",
+   wallet: {},
+   remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204764/smbgwjb7xeoopi3mgl2h.jpg"
+ },
+]
 
-# hash = {
-#   "1": "https://res.cloudinary.com/sailemarinho/image/upload/v1559935635/jiiwzjt9r97xoppgrz6v.png"
-#   "2":
-#   "3": "https://res.cloudinary.com/sailemarinho/image/upload/v1559935633/ngbzmdr6qghsn3fqdu36.png"
-#   "4":
-#   "5":
-#   "6":
-#   "7":
-#   "8": "https://res.cloudinary.com/sailemarinho/image/upload/v1559935634/xkc4twoysvyvd7leucxt.png"
-#   "9": "https://res.cloudinary.com/sailemarinho/image/upload/v1559935634/wuuh19eidjsvxokjpviy.png"
-#   "10": "https://res.cloudinary.com/sailemarinho/image/upload/v1559935634/dya4uynfww0hqimo0lnt.png"
-#   "11": "https://res.cloudinary.com/sailemarinho/image/upload/v1559935634/wuuh19eidjsvxokjpviy.png"
-#   "12": "https://res.cloudinary.com/sailemarinho/image/upload/v1559935634/ehd3rgrfhe7rcknuloek.png"
-#   "13": "https://res.cloudinary.com/sailemarinho/image/upload/v1559935634/ijqlu4ktyqsjkday4f4j.png"
-# }
+User.create!(user_attributes)
 
-# Stock.find(1).remote_photo_url:
+puts "Created #{User.count} users"
+
+
+
+
 
 
 
