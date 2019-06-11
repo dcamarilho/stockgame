@@ -6,25 +6,34 @@
         <h3>Welcome to Your Wallet</h3>
       </div>
       <div>
-        <p>Here you can find your all your investiments!</p>
+        <p>Check your investiments:</p>
       </div>
-      <div class="card-info">
+      <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div class="card-info" id="wallet">
         <div class="card-content">
-          <h5>Total:</h5><p><%= "#{current_user.number_of_stocks} stocks" %></p>
+         <% if current_user.number_of_stocks == 1 %>
+            <p>YAY! You own <%= "#{current_user.number_of_stocks}" %> stock.</p>
+            <i class="fas fa-smile-beam"></i>
+          <% elsif current_user.number_of_stocks <= 0 %>
+            <p>Oops, you don't own any stocks...</p>
+            <i class="fas fa-sad-cry"></i>
+          <% else %>
+            <p>YAY! You own <%= "#{current_user.number_of_stocks}" %> stocks!</p>
+            <i class="fas fa-laugh-beam"></i>
+          <% end %>
         </div>
         <div class="card-content">
-          <h5>Total Invested:</h5> <p><%= current_user.invested_credits %></p>
+          <p>Invested: <%= current_user.invested_credits.round(2) %></p>
         </div>
-        <div class="card-content">
-          <h5>Evolution:</h5>
+        <div class="card-content" id="evolution">
+          <p>Evolution:</p>
            <% if current_user.evolution >= 0 %>
-              <p id="variation-positive"><%= "+#{current_user.evolution}%" %></p>
+              <p id="variation-positive"><%= "+#{current_user.evolution.round(2)}%" %></p>
            <% else %>
-              <p id="variation-negative"><%= "#{current_user.evolution}%" %></p>
+              <p id="variation-negative"><%= "-#{current_user.evolution.round(2)}%" %></p>
           <% end %>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-4 col-sm-offset-4">
         <% @wallet.each do |key, value| %>
         <% if value > 0 %>
         <% stock = Stock.find(key.to_i) %>
@@ -39,7 +48,7 @@
             </div>
             <div>
               <div class="card-content">
-                <h5><%= link_to stock.fullname, stock_path(stock) %></h5>
+                <p><%= link_to stock.fullname, stock_path(stock) %></p>
               </div>
               <div class="card-content">
 
@@ -47,7 +56,7 @@
                   <p class="coin-p"><%= stock.price %></p>
                 </div>
                   <div class="card-content">
-                    <h5>Quantity:</h5> <p><%= value %></p>
+                    <p>Quantity:</p> <p><%= value %></p>
                   </div>
                   <div class="card-content">
                     <% if stock.variation.include?('+') %>

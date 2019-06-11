@@ -34,7 +34,7 @@
               </div>
             <div  class="stock-invested">
               <%= image_tag("icons8-expensive-price-48(1).png", height: "30", width: "30") %>
-              <h4 id="stock-invested"><%= current_user.wallet[@stock.id.to_s] ? @stock.price * current_user.wallet[@stock.id.to_s] : 0 %></h4>
+              <h4 id="stock-invested"><%= current_user.wallet[@stock.id.to_s] ? (@stock.price * current_user.wallet[@stock.id.to_s]).round(2) : 0 %></h4>
             </div>
           </div>
 
@@ -57,7 +57,7 @@
               <%= image_tag("icons8-expensive-price-48(1).png", height: "30", width: "30") %>
             </div>
             <div id="user-credits">
-              <%= current_user.credits %>
+              <%= current_user.credits.round(2) %>
             </div>
 
           </div>
