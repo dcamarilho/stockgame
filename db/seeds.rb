@@ -251,14 +251,6 @@ puts "Created #{Stock.count} stocks"
    remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204765/x0ldfhfppr9jkobsv0ih.jpg"
  },
    {
-   name: "Daniel Amarilho",
-   username: "dani",
-   password: "123456",
-   email: "daniel.amarilho@stock.com",
-   wallet: {},
-   remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204765/p052mtk0h4jtblly5ay4.jpg"
- },
-   {
    name: "Daniel Silva",
    username: "carioca",
    password: "123456",
@@ -291,14 +283,6 @@ puts "Created #{Stock.count} stocks"
    remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204764/cq30gpgqk5rcxrxno5il.jpg"
  },
    {
-   name: "Kaynan Silva",
-   username: "kaynan",
-   password: "123456",
-   email: "kaynan.silva@stock.com",
-   wallet: {},
-   remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204764/dpmsizluccouvystt78l.jpg"
- },
-   {
    name: "Lucas Souza",
    username: "magrao",
    password: "123456",
@@ -329,14 +313,6 @@ puts "Created #{Stock.count} stocks"
    email: "raphael.schmidt@stock.com",
    wallet: {},
    remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204764/vuvophomdc88ctvxaovp.jpg"
- },
-    {
-   name: "Saile Ribeiro",
-   username: "sailet",
-   password: "123456",
-   email: "saile.ribeiro@stock.com",
-   wallet: {},
-   remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204764/h1p0dwjhob5gtefshwln.jpg"
  },
     {
    name: "Thiago Zanette",
