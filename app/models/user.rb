@@ -71,7 +71,7 @@ class User < ApplicationRecord
   end
 
   def calculate_range
-    quotient = (self.experience.to_f / self.calculate_maxhp.to_f).round
+    quotient = (self.experience.to_f / self.calculate_maxhp.to_f) * 100
     case quotient
     when 0..25
       range = "a"
