@@ -3,10 +3,10 @@
   <div class="row" >
     <div id="stock-index-content">
       <div>
-        <h3>Welcome to Your Wallet</h3>
+        <h3>Wallet</h3>
       </div>
       <div>
-        <p>Check your investiments:</p>
+        <p>Check your investiments</p>
       </div>
       <div class="col-xs-12 col-sm-4 col-sm-offset-4">
       <div class="card-info" id="wallet">
@@ -30,13 +30,14 @@
            <% if current_user.evolution >= 0 %>
               <p id="variation-positive"><%= "+#{current_user.evolution.round(2)}%" %></p>
            <% else %>
-              <p id="variation-negative"><%= "-#{current_user.evolution.round(2)}%" %></p>
+              <p id="variation-negative"><%= "#{current_user.evolution.round(2)}%" %></p>
           <% end %>
         </div>
       </div>
         <% @wallet.each do |key, value| %>
         <% if value > 0 %>
         <% stock = Stock.find(key.to_i) %>
+         <%= link_to stock_path(stock) do %>
         <div class="card-info">
           <div class="d-flex align-items-center">
             <div class="mr-4">
@@ -67,6 +68,7 @@
                     <div id="variation-negative">
                       <%= stock.variation %>
                     </div>
+                    <% end %>
                     <% end %>
                   </div>
                 </div>
