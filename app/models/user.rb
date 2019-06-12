@@ -84,9 +84,9 @@ class User < ApplicationRecord
     case quotient
     when 0..25
       range = "a"
-    when 26..50
+    when 26..49
       range = "b"
-    when 51..75
+    when 50..75
       range = "c"
     when 76..99
       range = "d"
@@ -96,5 +96,16 @@ class User < ApplicationRecord
 
   def evolution
     (self.total - 1000) / 100
+  end
+
+  def ranking
+    users = User.all.sort_by(&:total).reverse!
+    i = 1
+    users.each_with_index do |user, index|
+      if  user == self
+        i += index
+      end
+    end
+    return i
   end
 end
