@@ -5,7 +5,9 @@ class StocksController < ApplicationController
     if params[:query].present?
       @stocks = Stock.search_by_stock_name(params[:query])
     else
-      @stocks = Stock.all
+      # @stocks = Stock.all.sort_by { |stock| stock.price }.reverse!
+      @stocks = Stock.all.sort_by { |stock| (stock.variation.gsub!(",",".").to_f) }.reverse!
+
     end
   end
 
