@@ -2,9 +2,8 @@
 <div class="container">
   <div class="row" >
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-      <div class="card-info" id="dashboard">
-        <span  style="color: #824AB2;"> ● ● ● ● ● ● ● ● ● ● ● ● </span>
-            <h4>Hello, @<%= current_user.username %>!</h4>
+        <div class="card-info-dashboard mt-3" id="dashboard">
+         <h4>Hello, @<%= current_user.username %>!</h4>
             <div class="container">
               <div id="outbar">
                 <div id="inbar">
@@ -13,13 +12,12 @@
               <p>XP <%= current_user.experience %>/<%= current_user.calculate_maxhp %></p>
               <h5>Level <%= current_user.calculate_level %></h5>
             </div>
-        <span style="margin-left: 160px; color: #824AB2;">● ● ● ● ● ● ● ● ● ● ● ● </span>
-      </div>
-    </div>
-    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-      <div class="card-info" id="dashboard">
-       <span style="color: #FF206E"> ● ● ● ● ● ● ● ● ● ● ● ● </span>
-       <section class="grid-container" style="margin-bottom: -10px;">
+          </div>
+        </div>
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4" id="dashboard">
+      <div class="card-info-dashboard">
+       <span style="color: #FF206E; margin-bottom: -30px"> ● ● ● ● ● ● ● ● ● ● ● ● </span>
+       <section class="grid-container" style="margin-bottom: -20px;">
         <div class="box" id="box">
           <h4 style="color: #9E1633">Total</h4>
           <div class="card-content-dashboard justify-content-center">
@@ -28,13 +26,14 @@
           </div>
         </div>
       </section>
-      <span style="margin-left: 160px; color: #FF206E;">● ● ● ● ● ● ● ● ● ● ● ● </span>
+      <span style="margin-left: 160px; color: #FF206E; margin-top: -15px">● ● ● ● ● ● ● ● ● ● ● ● </span>
       </div>
     </div>
-    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-      <div class="card-info" id="dashboard">
-       <span style="color: #1AC8ED"> ● ● ● ● ● ● ● ● ● ● ● ● </span>
-       <section class="grid-container" style="margin-bottom: -10px;">
+    <%= link_to dashboard_wallet_path do %>
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4 ml-2" id="dashboard">
+      <div class="card-info-dashboard">
+       <span style="color: #1AC8ED; margin-bottom: -30px"> ● ● ● ● ● ● ● ● ● ● ● ● </span>
+       <section class="grid-container" style="margin-bottom: -20px;">
         <div class="box" id="box-2">
           <h4>Invested</h4>
           <div class="card-content-dashboard justify-content-center">
@@ -43,14 +42,15 @@
           </div>
         </div>
       </section>
-      <span style="margin-left: 160px; color: #1AC8ED; margin-bottom: -13px;"> ● ● ● ● ● ● ● ● ● ● ● ● </span>
+      <span style="margin-left: 160px; color: #1AC8ED; margin-top: -15px;"> ● ● ● ● ● ● ● ● ● ● ● ● </span>
     </div>
   </div>
-
-  <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-    <div class="card-info" id="dashboard">
-     <span  style="color: #FBFF12"> ● ● ● ● ● ● ● ● ● ● ● ● </span>
-     <section class="grid-container" style="margin-bottom: -10px;">
+  <% end %>
+  <%= link_to stocks_path do %>
+  <div class="col-xs-12 col-sm-4 col-sm-offset-4 ml-2">
+    <div class="card-info-dashboard" id="dashboard">
+     <span  style="color: #EEBA0B; margin-bottom: -30px"> ● ● ● ● ● ● ● ● ● ● ● ● </span>
+     <section class="grid-container" style="margin-bottom: -20px;">
       <div class="box" id="box-3" >
         <h4> Available</h4>
         <div class="card-content-dashboard justify-content-center">
@@ -59,9 +59,10 @@
         </div>
       </div>
     </section>
-    <span style="margin-left: 160px; color: #FBFF12; margin-bottom: -13px;"> ● ● ● ● ● ● ● ● ● ● ● ● </span>
+    <span style="margin-left: 160px; color: #EEBA0B; margin-top: -15px;"> ● ● ● ● ● ● ● ● ● ● ● ● </span>
   </div>
 </div>
+<% end %>
 
       <!-- card 2: conquistas
       infos, quanto ja investiu
