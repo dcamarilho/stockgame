@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
       current_user.experience += 5
       current_user.save
       if level != current_user.calculate_level
-        flash[:notice] = "Level 1UP!"
+        flash[:notice] = "Level UP!!!"
       else
         flash[:notice] = "Congratulations! #{@order.quantity.abs} #{@order.stock.name} #{@order.quantity.negative? ? 'removed from' : 'added to' } your wallet."
       end
