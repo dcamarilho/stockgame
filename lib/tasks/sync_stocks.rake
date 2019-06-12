@@ -5,8 +5,10 @@ namespace :stocks do
     puts "Checking Users Credits"
 
     total_before = {}
+    lvl = {}
     User.all.each do |user|
       total_before[user.id] = user.total
+      lvl[user.id] = user.calculate_level
     end
 
 
@@ -88,6 +90,12 @@ namespace :stocks do
         puts "More XP to #{user.name}"
         user.experience += (delta * 10)
         user.save
+      end
+    end
+
+    User.all.each do |user|
+      if user.calculate_level != lvl[user.id] && user == current_user
+        flash[:notice]  = 'Level UP!'
       end
     end
 
