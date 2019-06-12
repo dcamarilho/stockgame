@@ -3,6 +3,11 @@ require 'json'
 require 'nokogiri'
 require 'faker'
 
+User.all.each do |user|
+  user.credits -= 9000
+  user.save
+end
+
 # stock_attributes = []
 
 # i = 0
@@ -122,111 +127,111 @@ require 'faker'
 
 
 
- puts 'Creating users...'
+#  puts 'Creating users...'
 
 
- user_attributes = [
- {
-   name: "Adriano Araujo",
-   username: "freizao_",
-   password: "123456",
-   email: "adriano.araujo@stock.com",
-   wallet: {},
-   remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204765/udacd4e9bpg8awjy3ubm.jpg"
- },
-  {
-   name: "Caio Bastone",
-   username: "cainho",
-   password: "123456",
-   email: "caio.bastone@stock.com",
-   wallet: {},
-   remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204765/x0ldfhfppr9jkobsv0ih.jpg"
- },
-   {
-   name: "Daniel Silva",
-   username: "carioca",
-   password: "123456",
-   email: "daniel.silva@stock.com",
-   wallet: {},
-   remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204764/rfvzrqjdizposgpw79kz.jpg"
- },
-   {
-   name: "Diego Pisani",
-   username: "diego",
-   password: "123456",
-   email: "diego.pisani@stock.com",
-   wallet: {},
-   remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204764/cyfgyyye9kxczvzzynw5.jpg"
- },
-   {
-   name: "Gabriel Gil",
-   username: "gabriel",
-   password: "123456",
-   email: "gabriel.gil@stock.com",
-   wallet: {},
-   remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204764/eybhdqm9ovdryluv16zp.jpg"
- },
-   {
-   name: "João Apel",
-   username: "jão!",
-   password: "123456",
-   email: "joao.apel@stock.com",
-   wallet: {},
-   remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204764/cq30gpgqk5rcxrxno5il.jpg"
- },
-   {
-   name: "Lucas Souza",
-   username: "magrao",
-   password: "123456",
-   email: "lucas.souza@stock.com",
-   wallet: {},
-   remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204764/ctxmqkbkjdyaoyjkjbei.jpg"
- },
-   {
-   name: "Marcelo Escobar",
-   username: "escobar",
-   password: "123456",
-   email: "marcelo.escobar@stock.com",
-   wallet: {},
-   remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204764/vbp7v2bmay4gmn13lbv2.jpg"
- },
-    {
-   name: "Miucha Salge",
-   username: "miucha",
-   password: "123456",
-   email: "miucha.salge@stock.com",
-   wallet: {},
-   remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204765/g39j5mou58k6gx9uz8bc.jpg"
- },
-    {
-   name: "Raphael Schmidt",
-   username: "rapha",
-   password: "123456",
-   email: "raphael.schmidt@stock.com",
-   wallet: {},
-   remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204764/vuvophomdc88ctvxaovp.jpg"
- },
-    {
-   name: "Thiago Zanette",
-   username: "thiagao",
-   password: "123456",
-   email: "thiago.zanette@stock.com",
-   wallet: {},
-   remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204764/rvxcdanoidvhpprnizgq.jpg"
- },
-    {
-   name: "Ricardo Ribeiro",
-   username: "ricardo",
-   password: "123456",
-   email: "ricardo.ribeiro@stock.com",
-   wallet: {},
-   remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204764/smbgwjb7xeoopi3mgl2h.jpg"
- },
-]
+#  user_attributes = [
+#  {
+#    name: "Adriano Araujo",
+#    username: "freizao_",
+#    password: "123456",
+#    email: "adriano.araujo@stock.com",
+#    wallet: {},
+#    remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204765/udacd4e9bpg8awjy3ubm.jpg"
+#  },
+#   {
+#    name: "Caio Bastone",
+#    username: "cainho",
+#    password: "123456",
+#    email: "caio.bastone@stock.com",
+#    wallet: {},
+#    remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204765/x0ldfhfppr9jkobsv0ih.jpg"
+#  },
+#    {
+#    name: "Daniel Silva",
+#    username: "carioca",
+#    password: "123456",
+#    email: "daniel.silva@stock.com",
+#    wallet: {},
+#    remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204764/rfvzrqjdizposgpw79kz.jpg"
+#  },
+#    {
+#    name: "Diego Pisani",
+#    username: "diego",
+#    password: "123456",
+#    email: "diego.pisani@stock.com",
+#    wallet: {},
+#    remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204764/cyfgyyye9kxczvzzynw5.jpg"
+#  },
+#    {
+#    name: "Gabriel Gil",
+#    username: "gabriel",
+#    password: "123456",
+#    email: "gabriel.gil@stock.com",
+#    wallet: {},
+#    remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204764/eybhdqm9ovdryluv16zp.jpg"
+#  },
+#    {
+#    name: "João Apel",
+#    username: "jão!",
+#    password: "123456",
+#    email: "joao.apel@stock.com",
+#    wallet: {},
+#    remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204764/cq30gpgqk5rcxrxno5il.jpg"
+#  },
+#    {
+#    name: "Lucas Souza",
+#    username: "magrao",
+#    password: "123456",
+#    email: "lucas.souza@stock.com",
+#    wallet: {},
+#    remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204764/ctxmqkbkjdyaoyjkjbei.jpg"
+#  },
+#    {
+#    name: "Marcelo Escobar",
+#    username: "escobar",
+#    password: "123456",
+#    email: "marcelo.escobar@stock.com",
+#    wallet: {},
+#    remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204764/vbp7v2bmay4gmn13lbv2.jpg"
+#  },
+#     {
+#    name: "Miucha Salge",
+#    username: "miucha",
+#    password: "123456",
+#    email: "miucha.salge@stock.com",
+#    wallet: {},
+#    remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204765/g39j5mou58k6gx9uz8bc.jpg"
+#  },
+#     {
+#    name: "Raphael Schmidt",
+#    username: "rapha",
+#    password: "123456",
+#    email: "raphael.schmidt@stock.com",
+#    wallet: {},
+#    remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204764/vuvophomdc88ctvxaovp.jpg"
+#  },
+#     {
+#    name: "Thiago Zanette",
+#    username: "thiagao",
+#    password: "123456",
+#    email: "thiago.zanette@stock.com",
+#    wallet: {},
+#    remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204764/rvxcdanoidvhpprnizgq.jpg"
+#  },
+#     {
+#    name: "Ricardo Ribeiro",
+#    username: "ricardo",
+#    password: "123456",
+#    email: "ricardo.ribeiro@stock.com",
+#    wallet: {},
+#    remote_photo_url: "https://res.cloudinary.com/sailemarinho/image/upload/v1560204764/smbgwjb7xeoopi3mgl2h.jpg"
+#  },
+# ]
 
-User.create!(user_attributes)
+# User.create!(user_attributes)
 
-puts "Created #{User.count} users"
+# puts "Created #{User.count} users"
 
 
 
