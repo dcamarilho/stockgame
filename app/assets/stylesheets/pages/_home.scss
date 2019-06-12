@@ -1,19 +1,43 @@
 // Specific CSS for your home-page
+
 .container-home {
-  background-image: url('https://media.giphy.com/media/xTiTnxpQ3ghPiB2Hp6/source.gif');
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://media.giphy.com/media/xTiTnxpQ3ghPiB2Hp6/source.gif');
   width:100%;
   color: white;
   min-height: 100vh;
   display: grid;
   text-align: center;
   align-content: center;
+
 }
 
 .container-home h1 {
   letter-spacing: 5px;
-  padding-bottom: 130px;
+  padding-bottom: 180px;
 }
 
+.logo {
+  margin-bottom: -140px;
+
+}
+
+
+.content-typed{
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  color: $my-lightpurple;
+  font-weight: 700;
+  font-style: italic;
+
+
+  p {
+    margin-right: 10px;
+    color: white;
+    font-style: normal;
+  }
+
+}
 .content {
   position: absolute;
   top: 55%;
@@ -21,39 +45,32 @@
   transform: translate(-50%, -50%);
   height: 160px;
   overflow:hidden;
-
-
-
   font-family: 'Lato', sans-serif;
   font-size: 30px;
   line-height: 40px;
   color: white;
+  margin-top: 170px;
 
   &__container {
     font-weight: 600;
     overflow: hidden;
     height: 40px;
     padding: 0 40px;
-
     &:before {
       content: '[';
       left: 0;
     }
-
     &:after {
       content: ']';
       position: absolute;
       right: 0;
     }
-
     &:after, &:before {
       position: absolute;
       top: 0;
-
-      color: #824AB2;
+      color: $purple;
       font-size: 42px;
       line-height: 40px;
-
       -webkit-animation-name: opacity;
       -webkit-animation-duration: 2s;
       -webkit-animation-iteration-count: infinite;
@@ -62,40 +79,37 @@
       animation-iteration-count: infinite;
     }
 
-    &__text {
-      display: inline;
-      float: left;
-      margin: 0;
-      color: white;
-    }
-
     &__list {
       margin-top: 0;
-      padding-left: 87px;
-      text-align: left;
+      text-align: center;
       list-style: none;
-
       -webkit-animation-name: change;
       -webkit-animation-duration: 10s;
       -webkit-animation-iteration-count: infinite;
       animation-name: change;
       animation-duration: 10s;
       animation-iteration-count: infinite;
-
       &__item {
         line-height:40px;
         margin:0;
-        color:#CCBCFF;
+
+        a {
+          color: white;
+        }
       }
     }
   }
 }
 
+.content__container__list {
+  padding: 0;
+}
+
+
 @-webkit-keyframes opacity {
   0%, 100% {opacity:0;}
   50% {opacity:1;}
 }
-
 @-webkit-keyframes change {
   0%, 12.66%, 100% {transform:translate3d(0,0,0);}
   16.66%, 29.32% {transform:translate3d(0,-25%,0);}
@@ -104,12 +118,10 @@
   66.64%,79.3% {transform:translate3d(0,-50%,0);}
   83.3%,95.96% {transform:translate3d(0,-25%,0);}
 }
-
 @-o-keyframes opacity {
   0%, 100% {opacity:0;}
   50% {opacity:1;}
 }
-
 @-o-keyframes change {
   0%, 12.66%, 100% {transform:translate3d(0,0,0);}
   16.66%, 29.32% {transform:translate3d(0,-25%,0);}
@@ -118,12 +130,10 @@
   66.64%,79.3% {transform:translate3d(0,-50%,0);}
   83.3%,95.96% {transform:translate3d(0,-25%,0);}
 }
-
 @-moz-keyframes opacity {
   0%, 100% {opacity:0;}
   50% {opacity:1;}
 }
-
 @-moz-keyframes change {
   0%, 12.66%, 100% {transform:translate3d(0,0,0);}
   16.66%, 29.32% {transform:translate3d(0,-25%,0);}
@@ -132,12 +142,10 @@
   66.64%,79.3% {transform:translate3d(0,-50%,0);}
   83.3%,95.96% {transform:translate3d(0,-25%,0);}
 }
-
 @keyframes opacity {
   0%, 100% {opacity:0;}
   50% {opacity:1;}
 }
-
 @keyframes change {
   0%, 12.66%, 100% {transform:translate3d(0,0,0);}
   16.66%, 29.32% {transform:translate3d(0,-25%,0);}

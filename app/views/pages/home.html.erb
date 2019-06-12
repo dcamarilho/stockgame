@@ -1,25 +1,27 @@
 <div class="container-home">
-   <div>
-    <h1>Stock Game</h1>
+  <div class="logo">
+    <h1>PlayTrade
+      <%#= image_tag("https://image.flaticon.com/icons/png/128/1825/1825576.png", height: "50", width: "50") %>
+    </h1>
   </div>
+  <div class="content-typed">
+    <div><p>Let's</p></div><div class="typed_home"></div>
+  </div>
+
   <div class="content">
     <div class="content__container">
-      <p class="content__container__text">
-        Let's
-      </p>
-
       <ul class="content__container__list">
-        <li class="content__container__list__item">play!</li>
-        <li class="content__container__list__item">profit!</li>
-        <li class="content__container__list__item">fun!</li>
-        <li class="content__container__list__item">learn!</li>
+        <li class="content__container__list__item"><%= link_to "START", dashboard_path, class: "snip1562" %></li>
+        <li class="content__container__list__item"><%= link_to "START", dashboard_path, class: "snip1562" %></li>
+        <li class="content__container__list__item"><%= link_to "START", dashboard_path, class: "snip1562" %></li>
+        <li class="content__container__list__item"><%= link_to "START", dashboard_path, class: "snip1562" %></li>
       </ul>
     </div>
   </div>
 
-  <div>
-    <br>
-    <%= link_to "START", dashboard_path, class: "snip1562" %>
+
+
   </div>
 </div>
+
 
