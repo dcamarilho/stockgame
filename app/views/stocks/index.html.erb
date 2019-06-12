@@ -3,7 +3,7 @@
   <div class="row" >
     <div id="stock-index-content">
       <div>
-        <h3>Welcome to stocks Market!</h3>
+        <h3>Stocks Market</h3>
       </div>
       <div>
         <%= form_tag stocks_path, method: :get do %>
@@ -17,6 +17,7 @@
     </div>
       <div class="col-xs-12 col-sm-4 col-sm-offset-4">
         <% @stocks.each do |stock| %>
+        <%= link_to stock_path(stock) do %>
           <div class="card-info">
             <div class="d-flex">
               <div class="mr-4">
@@ -43,8 +44,8 @@
                     <div id="variation-negative">
                       <%= stock.variation %>
                     </div>
+                    <% end %>
                   <% end %>
-
                 </div>
               </div>
             </div>

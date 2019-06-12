@@ -3,14 +3,10 @@
   <div class="row" >
     <div id="stock-index-content">
       <div>
-        <h3>Ranking:</h3>
+        <h3>Traders (<%= @users.count %>)</h3>
       </div>
       <div>
-        <p>
-          Here you can find your friend's
-          <br>
-          ranking positions:
-        </p>
+         <%= image_tag 'podium.png'%>
       </div>
     </div>
       <div class="col-xs-12 col-sm-4 col-sm-offset-4">
@@ -27,7 +23,7 @@
               </div>
               <div>
                 <div class="card-content">
-                  <h5>User:</h5><p><%= user.username %></p>
+                  <h5>Trader:</h5><p><%= user.username %></p>
                 </div>
                 <div class="card-content">
                   <h5>Rank:</h5>

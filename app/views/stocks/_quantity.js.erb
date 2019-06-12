@@ -23,12 +23,16 @@ plusButton.addEventListener('click', (event) => {
 });
 
 minusButton.addEventListener('click', (event) => {
-  stockQuantity.innerText = parseInt(stockQuantity.innerText, 10) - 1
-  stockInvested.innerText = (parseFloat(stockInvested.innerText, 10) - parseFloat(price, 10)).toFixed(2)
-  orderQuantity.value = parseInt(orderQuantity.value, 10) - 1
-  currentCredits.innerText = (parseFloat(currentCredits.innerText, 10) + parseFloat(price, 10)).toFixed(2)
 
-});
+    stockQuantity.innerText = parseInt(stockQuantity.innerText, 10) - 1
+    stockInvested.innerText = (parseFloat(stockInvested.innerText, 10) - parseFloat(price, 10)).toFixed(2)
+    orderQuantity.value = parseInt(orderQuantity.value, 10) - 1
+    currentCredits.innerText = (parseFloat(currentCredits.innerText, 10) + parseFloat(price, 10)).toFixed(2)
+
+
+
+  });
+
 
 
 
