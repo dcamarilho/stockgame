@@ -1,3 +1,31 @@
+#dashboard-1 {
+  overflow: hidden;
+  height: 148px;
+  // background: linear-gradient(to right, #F2F8FF, #E5F1FF);
+  // background-color: transparent;
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: grid;
+  align-items: center;
+  border-radius: 8px;
+  margin-bottom: -50px;
+  padding: 0px 15px 0px 15px;
+  opacity: 0.7;
+}
+
+#dashboard-head {
+  overflow: hidden;
+  height: 220px;
+  // background: linear-gradient(to right, #F2F8FF, #E5F1FF);
+  // background-color: transparent;
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: grid;
+  align-items: center;
+  border-radius: 8px;
+  margin-bottom: -42px;
+  padding: 0px 0px 0px 0px;
+  opacity: 0.7;
+}
+
 .card-info-dashboard {
   overflow: hidden;
   height: 148px;
@@ -55,6 +83,46 @@
   letter-spacing: 1px;
   color: #9E1633;
 }
+
+#dashboard-1 {
+  overflow: hidden;
+  height: 148px;
+  // background: linear-gradient(to right, #F2F8FF, #E5F1FF);
+  // background-color: transparent;
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: grid;
+  align-items: center;
+  border-radius: 8px;
+  margin-bottom: -20px;
+  padding: 0px 15px 0px 15px;
+  opacity: 0.7;
+}
+
+#dashboard-1 h4 {
+  margin-bottom: 3px;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #727C7A;
+}
+
+
+#dashboard-1 p {
+  font-size: 18px;
+  line-height: 1.4;
+  opacity: 0.8;
+  letter-spacing: 1px;
+  font-weight: bolder;
+  color: #9E1633;
+}
+
+#dashboard-1 h5 {
+  font-size: 20px;
+  font-weight: bolder;
+  margin-right: 10px;
+  letter-spacing: 1px;
+  color: #9E1633;
+}
+
 
 .box {
   background-color: #FFD4FF;

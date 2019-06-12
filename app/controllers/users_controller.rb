@@ -10,7 +10,6 @@ class UsersController < ApplicationController
     # @user = current_user
     @wallet = current_user.wallet
     @orders = current_user.orders
-    @users = User.all
   end
 
   def orders
