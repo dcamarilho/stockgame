@@ -207,9 +207,17 @@ padding-top: 5px;
 }
 
 .card-content {
+  font-size: 18px;
   display: flex;
   .variation {
     justify-content: center;
+  }
+
+  & a {
+    font-size: 18px;
+  }
+  p {
+    font-size: 18px;
   }
 }
 
