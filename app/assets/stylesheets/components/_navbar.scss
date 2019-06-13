@@ -8,18 +8,22 @@
   z-index: 2;
   justify-content: center;
   align-items: baseline;
+  width: 100vw;
 
   & h5 {
-    margin-left: -164px;
+    margin-left: -158px;
     color: $purpleshwhite;
     font-size: 15px;
+  }
+
+  img {
+    height: 40px;
+    width: 40px;
   }
  }
 
 
-.nav-item {
 
-}
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
